@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" path="res://features/catalogue/catalogue.gd" id="1_8lh0q"]
 [ext_resource type="PackedScene" uid="uid://cdmx8gxxtww14" path="res://features/catalogue/catalogue_item.tscn" id="1_rfnd3"]
-[ext_resource type="PackedScene" uid="uid://cpwxxqx6lci6h" path="res://assets/cat.blend" id="3_p06bf"]
+[ext_resource type="PackedScene" uid="uid://cpwxxqx6lci6h" path="res://models/cat.blend" id="3_p06bf"]
 
 [node name="Catalogue" type="Control"]
 layout_mode = 3
@@ -181,7 +181,9 @@ offset_bottom = 145.0
 [node name="SubViewport" type="SubViewport" parent="Container/HBoxContainer/Details/VBoxContainer/Control/SubViewportContainer"]
 own_world_3d = true
 transparent_bg = true
+handle_input_locally = false
 size = Vector2i(190, 145)
+render_target_update_mode = 4
 
 [node name="Camera3D" type="Camera3D" parent="Container/HBoxContainer/Details/VBoxContainer/Control/SubViewportContainer/SubViewport"]
 transform = Transform3D(1, -5.28425e-16, 2.98969e-16, 2.98969e-16, 0.857167, 0.515038, -5.28425e-16, -0.515038, 0.857167, 2.08165e-12, 0.68, 2.08165e-12)

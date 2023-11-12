@@ -3,7 +3,7 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://din52qclvl7xr"
-path.s3tc="res://.godot/imported/placeholder_garfield.jpg-1cc816e9a141e062f85c3fc6e7aa2759.s3tc.ctex"
+path.s3tc="res://.godot/imported/placeholder_garfield.jpg-f7f6f6431169fd78d3fe837dadff2051.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -11,8 +11,8 @@ metadata={
 
 [deps]
 
-source_file="res://assets/placeholder_garfield.jpg"
-dest_files=["res://.godot/imported/placeholder_garfield.jpg-1cc816e9a141e062f85c3fc6e7aa2759.s3tc.ctex"]
+source_file="res://textures/cat_styles/placeholder_garfield.jpg"
+dest_files=["res://.godot/imported/placeholder_garfield.jpg-f7f6f6431169fd78d3fe837dadff2051.s3tc.ctex"]
 
 [params]
 

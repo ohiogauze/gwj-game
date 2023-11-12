@@ -1,4 +1,6 @@
-[gd_scene load_steps=3 format=3 uid="uid://s4slrcb5ftuq"]
+[gd_scene load_steps=6 format=3 uid="uid://s4slrcb5ftuq"]
+
+[ext_resource type="PackedScene" uid="uid://jttvw25ngok3" path="res://models/appliances/fridge.tscn" id="1_2o57c"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_dvqdd"]
 albedo_color = Color(1, 0.533333, 0.2, 1)
@@ -7,8 +9,31 @@ albedo_color = Color(1, 0.533333, 0.2, 1)
 material = SubResource("StandardMaterial3D_dvqdd")
 size = Vector3(4, 0.25, 5)
 
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_afw4q"]
+albedo_color = Color(0.827451, 0.780392, 1, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_dd6ii"]
+albedo_color = Color(1, 0.827451, 0.768627, 1)
+
 [node name="Kitchen" type="Node3D"]
 
 [node name="Floor" type="MeshInstance3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.08165e-12, -0.125, 2.08165e-12)
 mesh = SubResource("BoxMesh_no3yp")
+
+[node name="Fridge" parent="." instance=ExtResource("1_2o57c")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.36498, 2.08165e-12, -2.09629)
+
+[node name="Counter" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, -2, 2.08165e-12, -2.5)
+
+[node name="Base" type="CSGPolygon3D" parent="Counter"]
+polygon = PackedVector2Array(0, 0, 2.08165e-12, 3, 0.6, 3, 0.6, 0.6, 3, 0.6, 3, 2.08165e-12)
+depth = 0.8
+material = SubResource("StandardMaterial3D_afw4q")
+
+[node name="Top" type="CSGPolygon3D" parent="Counter"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.08165e-12, 2.08165e-12, -0.8)
+polygon = PackedVector2Array(0, 0, 2.08165e-12, 3.05, 0.65, 3.05, 0.65, 0.65, 3.05, 0.65, 3.05, 2.08165e-12)
+depth = 0.02
+material = SubResource("StandardMaterial3D_dd6ii")
