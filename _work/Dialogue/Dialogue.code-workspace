@@ -1,0 +1,16 @@
+{
+	"folders": [
+		{
+			"path": "."
+		}
+	],
+	"settings": {
+		"grammarly.selectors": [
+			{
+				"language": "fountain",
+				"scheme": "file",
+				"pattern": "Opening.fountain"
+			}
+		]
+	}
+}
