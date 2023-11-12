@@ -1,0 +1,185 @@
+[gd_scene load_steps=22 format=3 uid="uid://baryd3ae1wo6s"]
+
+[ext_resource type="PackedScene" uid="uid://beefg1sidd60x" path="res://house/rooms/bathroom.tscn" id="1_vbner"]
+[ext_resource type="PackedScene" uid="uid://bin63aasnn35o" path="res://house/rooms/bedroom.tscn" id="2_8j1m5"]
+[ext_resource type="PackedScene" uid="uid://s4slrcb5ftuq" path="res://house/rooms/kitchen.tscn" id="3_frgba"]
+[ext_resource type="PackedScene" uid="uid://jht3ds2x2fl5" path="res://house/rooms/lounge_room.tscn" id="4_0rjjc"]
+[ext_resource type="PackedScene" uid="uid://btq4c6h0ddgk6" path="res://house/rooms/office.tscn" id="5_7s0ep"]
+[ext_resource type="Texture2D" uid="uid://b86ue0l2xwhvm" path="res://icon.svg" id="6_1g3jr"]
+
+[sub_resource type="Gradient" id="Gradient_xs0v5"]
+colors = PackedColorArray(0.929715, 0.929715, 0.929715, 1, 1, 1, 1, 1)
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_p44mf"]
+frequency = 0.265
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_ufsra"]
+width = 64
+height = 64
+seamless = true
+color_ramp = SubResource("Gradient_xs0v5")
+noise = SubResource("FastNoiseLite_p44mf")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_umvdn"]
+cull_mode = 1
+albedo_texture = SubResource("NoiseTexture2D_ufsra")
+uv1_scale = Vector3(10, 10, 10)
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_nnfhe"]
+material = SubResource("StandardMaterial3D_umvdn")
+size = Vector2(12, 15)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_kx7ba"]
+albedo_color = Color(0.509804, 0.298039, 0.168627, 1)
+
+[sub_resource type="BoxMesh" id="BoxMesh_o8xko"]
+material = SubResource("StandardMaterial3D_kx7ba")
+size = Vector3(3, 0.25, 10)
+
+[sub_resource type="Gradient" id="Gradient_huhy3"]
+colors = PackedColorArray(0.83496, 0.84, 0.7896, 1, 0.981667, 1, 0.89, 1)
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_vkpya"]
+noise_type = 2
+frequency = 0.1515
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_bt5yg"]
+width = 64
+height = 64
+color_ramp = SubResource("Gradient_huhy3")
+noise = SubResource("FastNoiseLite_vkpya")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_cu6s4"]
+albedo_texture = SubResource("NoiseTexture2D_bt5yg")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_1tpsw"]
+albedo_texture = ExtResource("6_1g3jr")
+uv1_triplanar = true
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_km05l"]
+sky_top_color = Color(0.584314, 0.376471, 0.462745, 1)
+sky_horizon_color = Color(0.917647, 0.541176, 0.411765, 1)
+ground_bottom_color = Color(0.243137, 0.14902, 0.0784314, 1)
+ground_horizon_color = Color(0.917647, 0.541176, 0.411765, 1)
+sun_angle_max = 59.85
+
+[sub_resource type="Sky" id="Sky_h1n7s"]
+sky_material = SubResource("ProceduralSkyMaterial_km05l")
+
+[sub_resource type="Environment" id="Environment_ege5q"]
+background_mode = 2
+sky = SubResource("Sky_h1n7s")
+ambient_light_source = 2
+ambient_light_color = Color(0.968627, 0.909804, 0.839216, 1)
+ambient_light_energy = 0.5
+tonemap_mode = 3
+tonemap_exposure = 0.5
+
+[node name="House" type="Node"]
+
+[node name="Ceiling" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.08165e-12, 2.75, -4)
+mesh = SubResource("PlaneMesh_nnfhe")
+
+[node name="HallwayFloor" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.08165e-12, -0.125, -2)
+mesh = SubResource("BoxMesh_o8xko")
+
+[node name="Lights" type="Node" parent="."]
+
+[node name="OmniLight3D" type="OmniLight3D" parent="Lights"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.41206, 1.157)
+light_color = Color(1, 0.976471, 0.956863, 1)
+
+[node name="OmniLight3D2" type="OmniLight3D" parent="Lights"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.41206, -3.843)
+light_color = Color(1, 0.976471, 0.956863, 1)
+
+[node name="Rooms" type="Node" parent="."]
+
+[node name="Bathroom" parent="Rooms" instance=ExtResource("1_vbner")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.5, 2.08165e-12, -4)
+
+[node name="Bedroom" parent="Rooms" instance=ExtResource("2_8j1m5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.5, 2.08165e-12, -9)
+
+[node name="Kitchen" parent="Rooms" instance=ExtResource("3_frgba")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.5, 2.08165e-12, 2.08165e-12)
+
+[node name="LoungeRoom" parent="Rooms" instance=ExtResource("4_0rjjc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.5, 2.08165e-12, -6)
+
+[node name="Office" parent="Rooms" instance=ExtResource("5_7s0ep")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.5, 2.08165e-12, 0.5)
+
+[node name="Viewpoints" type="Node" parent="."]
+
+[node name="Entrance" type="Camera3D" parent="Viewpoints"]
+transform = Transform3D(1, -3.85245e-16, 3.46876e-16, 3.46876e-16, 0.994522, 0.104528, -3.85245e-16, -0.104528, 0.994522, 2.08165e-12, 1.7, 3)
+
+[node name="Enclosure" type="CSGCombiner3D" parent="."]
+operation = 2
+
+[node name="Clay" type="CSGBox3D" parent="Enclosure"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.08165e-12, 1.5, -4)
+size = Vector3(12, 3, 15)
+
+[node name="Hallway" type="CSGBox3D" parent="Enclosure"]
+transform = Transform3D(2.8, 0, 0, 0, 1, 0, 0, 0, 9.66, 2.08165e-12, 1, -2)
+operation = 2
+size = Vector3(1, 6, 1)
+material = SubResource("StandardMaterial3D_cu6s4")
+
+[node name="Bathroom" type="CSGBox3D" parent="Enclosure"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.5, 1, -4)
+operation = 2
+size = Vector3(4, 6, 3)
+
+[node name="BathroomDoor" type="CSGBox3D" parent="Enclosure"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.471, 0.5, -5)
+operation = 2
+size = Vector3(0.2, 3, 1)
+
+[node name="Bedroom" type="CSGBox3D" parent="Enclosure"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.5, 1, -9)
+operation = 2
+size = Vector3(6, 6, 4)
+
+[node name="BedroomDoor" type="CSGBox3D" parent="Enclosure"]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0.357641, 0.5, -6.8944)
+operation = 2
+size = Vector3(0.56, 3, 1)
+
+[node name="Kitchen" type="CSGBox3D" parent="Enclosure"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.5, 1, 2.08165e-12)
+operation = 2
+size = Vector3(4, 6, 5)
+material = SubResource("StandardMaterial3D_1tpsw")
+
+[node name="KitchenEntry" type="CSGBox3D" parent="Enclosure"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.43778, 0.5, -1)
+operation = 2
+size = Vector3(0.2, 3, 3)
+
+[node name="LoungeRoom" type="CSGBox3D" parent="Enclosure"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.5, 1, -6)
+operation = 2
+size = Vector3(4, 6, 5)
+
+[node name="LoungeRoomEntry" type="CSGBox3D" parent="Enclosure"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.43778, 0.5, -5)
+operation = 2
+size = Vector3(0.2, 3, 2)
+
+[node name="Office" type="CSGBox3D" parent="Enclosure"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.5, 1, 0.5)
+operation = 2
+size = Vector3(4, 6, 4)
+
+[node name="OfficeDoor" type="CSGBox3D" parent="Enclosure"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.471, 0.5, 2.08165e-12)
+operation = 2
+size = Vector3(0.2, 3, 1)
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_ege5q")

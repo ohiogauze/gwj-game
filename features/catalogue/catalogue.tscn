@@ -1,0 +1,230 @@
+[gd_scene load_steps=4 format=3 uid="uid://j72804edpiwd"]
+
+[ext_resource type="Script" path="res://features/catalogue/catalogue.gd" id="1_8lh0q"]
+[ext_resource type="PackedScene" uid="uid://cdmx8gxxtww14" path="res://features/catalogue/catalogue_item.tscn" id="1_rfnd3"]
+[ext_resource type="PackedScene" uid="uid://cpwxxqx6lci6h" path="res://assets/cat.blend" id="3_p06bf"]
+
+[node name="Catalogue" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_8lh0q")
+
+[node name="Backdrop" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 0.12549)
+
+[node name="Container" type="MarginContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 20
+theme_override_constants/margin_top = 20
+theme_override_constants/margin_right = 20
+theme_override_constants/margin_bottom = 20
+
+[node name="InnerContainer" type="MarginContainer" parent="Container"]
+layout_mode = 2
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = 10
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Container"]
+layout_mode = 2
+theme_override_constants/separation = 30
+
+[node name="Control" type="Control" parent="Container/HBoxContainer"]
+custom_minimum_size = Vector2(380, 320)
+layout_mode = 2
+
+[node name="Background" type="ColorRect" parent="Container/HBoxContainer/Control"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.0352941, 0.0509804, 0.215686, 1)
+
+[node name="Items" type="GridContainer" parent="Container/HBoxContainer/Control"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+theme_override_constants/h_separation = 10
+theme_override_constants/v_separation = 20
+columns = 5
+
+[node name="CatalogueItem" parent="Container/HBoxContainer/Control/Items" instance=ExtResource("1_rfnd3")]
+layout_mode = 2
+
+[node name="CatalogueItem2" parent="Container/HBoxContainer/Control/Items" instance=ExtResource("1_rfnd3")]
+layout_mode = 2
+
+[node name="CatalogueItem3" parent="Container/HBoxContainer/Control/Items" instance=ExtResource("1_rfnd3")]
+layout_mode = 2
+
+[node name="CatalogueItem4" parent="Container/HBoxContainer/Control/Items" instance=ExtResource("1_rfnd3")]
+layout_mode = 2
+
+[node name="CatalogueItem5" parent="Container/HBoxContainer/Control/Items" instance=ExtResource("1_rfnd3")]
+layout_mode = 2
+
+[node name="CatalogueItem6" parent="Container/HBoxContainer/Control/Items" instance=ExtResource("1_rfnd3")]
+layout_mode = 2
+
+[node name="CatalogueItem7" parent="Container/HBoxContainer/Control/Items" instance=ExtResource("1_rfnd3")]
+layout_mode = 2
+
+[node name="CatalogueItem8" parent="Container/HBoxContainer/Control/Items" instance=ExtResource("1_rfnd3")]
+layout_mode = 2
+
+[node name="CatalogueItem9" parent="Container/HBoxContainer/Control/Items" instance=ExtResource("1_rfnd3")]
+layout_mode = 2
+
+[node name="CatalogueItem10" parent="Container/HBoxContainer/Control/Items" instance=ExtResource("1_rfnd3")]
+layout_mode = 2
+
+[node name="CatalogueItem11" parent="Container/HBoxContainer/Control/Items" instance=ExtResource("1_rfnd3")]
+layout_mode = 2
+
+[node name="CatalogueItem12" parent="Container/HBoxContainer/Control/Items" instance=ExtResource("1_rfnd3")]
+layout_mode = 2
+
+[node name="CatalogueItem13" parent="Container/HBoxContainer/Control/Items" instance=ExtResource("1_rfnd3")]
+layout_mode = 2
+
+[node name="CatalogueItem14" parent="Container/HBoxContainer/Control/Items" instance=ExtResource("1_rfnd3")]
+layout_mode = 2
+
+[node name="CatalogueItem15" parent="Container/HBoxContainer/Control/Items" instance=ExtResource("1_rfnd3")]
+layout_mode = 2
+
+[node name="CatalogueItem16" parent="Container/HBoxContainer/Control/Items" instance=ExtResource("1_rfnd3")]
+layout_mode = 2
+
+[node name="CatalogueItem17" parent="Container/HBoxContainer/Control/Items" instance=ExtResource("1_rfnd3")]
+layout_mode = 2
+
+[node name="CatalogueItem18" parent="Container/HBoxContainer/Control/Items" instance=ExtResource("1_rfnd3")]
+layout_mode = 2
+
+[node name="CatalogueItem19" parent="Container/HBoxContainer/Control/Items" instance=ExtResource("1_rfnd3")]
+layout_mode = 2
+
+[node name="CatalogueItem20" parent="Container/HBoxContainer/Control/Items" instance=ExtResource("1_rfnd3")]
+layout_mode = 2
+
+[node name="CatalogueItem21" parent="Container/HBoxContainer/Control/Items" instance=ExtResource("1_rfnd3")]
+layout_mode = 2
+
+[node name="CatalogueItem22" parent="Container/HBoxContainer/Control/Items" instance=ExtResource("1_rfnd3")]
+layout_mode = 2
+
+[node name="CatalogueItem23" parent="Container/HBoxContainer/Control/Items" instance=ExtResource("1_rfnd3")]
+layout_mode = 2
+
+[node name="CatalogueItem24" parent="Container/HBoxContainer/Control/Items" instance=ExtResource("1_rfnd3")]
+layout_mode = 2
+
+[node name="CatalogueItem25" parent="Container/HBoxContainer/Control/Items" instance=ExtResource("1_rfnd3")]
+layout_mode = 2
+
+[node name="Details" type="Control" parent="Container/HBoxContainer"]
+custom_minimum_size = Vector2(190, 2.08165e-12)
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Container/HBoxContainer/Details"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 30
+
+[node name="Control" type="Control" parent="Container/HBoxContainer/Details/VBoxContainer"]
+custom_minimum_size = Vector2(190, 2.08165e-12)
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="Background" type="ColorRect" parent="Container/HBoxContainer/Details/VBoxContainer/Control"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.0352941, 0.0509804, 0.215686, 1)
+
+[node name="SubViewportContainer" type="SubViewportContainer" parent="Container/HBoxContainer/Details/VBoxContainer/Control"]
+layout_mode = 0
+offset_right = 190.0
+offset_bottom = 145.0
+
+[node name="SubViewport" type="SubViewport" parent="Container/HBoxContainer/Details/VBoxContainer/Control/SubViewportContainer"]
+own_world_3d = true
+transparent_bg = true
+size = Vector2i(190, 145)
+
+[node name="Camera3D" type="Camera3D" parent="Container/HBoxContainer/Details/VBoxContainer/Control/SubViewportContainer/SubViewport"]
+transform = Transform3D(1, -5.28425e-16, 2.98969e-16, 2.98969e-16, 0.857167, 0.515038, -5.28425e-16, -0.515038, 0.857167, 2.08165e-12, 0.68, 2.08165e-12)
+fov = 50.0
+
+[node name="cat" parent="Container/HBoxContainer/Details/VBoxContainer/Control/SubViewportContainer/SubViewport" instance=ExtResource("3_p06bf")]
+transform = Transform3D(0.529919, -4.80617e-16, -0.848048, 3.48787e-16, 1, -3.48787e-16, 0.848048, -1.10959e-16, 0.529919, 0, 0, -0.734962)
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="Container/HBoxContainer/Details/VBoxContainer/Control/SubViewportContainer/SubViewport"]
+
+[node name="Title" type="Label" parent="Container/HBoxContainer/Details/VBoxContainer/Control"]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_top = 5.0
+offset_bottom = 31.0
+grow_horizontal = 2
+text = "Super Cat"
+horizontal_alignment = 1
+
+[node name="Control2" type="Control" parent="Container/HBoxContainer/Details/VBoxContainer"]
+custom_minimum_size = Vector2(190, 2.08165e-12)
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="Background" type="ColorRect" parent="Container/HBoxContainer/Details/VBoxContainer/Control2"]
+layout_mode = 2
+offset_right = 190.0
+offset_bottom = 145.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.0352941, 0.0509804, 0.215686, 1)
+
+[node name="ScrollContainer" type="ScrollContainer" parent="Container/HBoxContainer/Details/VBoxContainer/Control2"]
+layout_mode = 2
+offset_left = 10.0
+offset_top = 10.0
+offset_right = 180.0
+offset_bottom = 135.0
+grow_horizontal = 2
+grow_vertical = 2
+horizontal_scroll_mode = 0
+
+[node name="Description" type="Label" parent="Container/HBoxContainer/Details/VBoxContainer/Control2/ScrollContainer"]
+layout_mode = 2
+text = "A POS cat."
