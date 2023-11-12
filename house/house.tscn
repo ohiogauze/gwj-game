@@ -95,6 +95,10 @@ light_color = Color(1, 0.976471, 0.956863, 1)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.41206, -3.843)
 light_color = Color(1, 0.976471, 0.956863, 1)
 
+[node name="KitchenOverhead" type="OmniLight3D" parent="Lights"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.56232, 2.51865, -0.281885)
+light_color = Color(1, 0.976471, 0.956863, 1)
+
 [node name="Rooms" type="Node" parent="."]
 
 [node name="Bathroom" parent="Rooms" instance=ExtResource("1_vbner")]
