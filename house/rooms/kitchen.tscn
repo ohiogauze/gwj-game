@@ -1,6 +1,7 @@
-[gd_scene load_steps=7 format=3 uid="uid://s4slrcb5ftuq"]
+[gd_scene load_steps=8 format=3 uid="uid://s4slrcb5ftuq"]
 
 [ext_resource type="PackedScene" uid="uid://jttvw25ngok3" path="res://models/appliances/fridge.tscn" id="1_2o57c"]
+[ext_resource type="Texture2D" uid="uid://b86ue0l2xwhvm" path="res://icon.svg" id="2_1fxsp"]
 [ext_resource type="PackedScene" uid="uid://x2h2fifi02bn" path="res://models/cookware/stock_pot.tscn" id="2_q2mbe"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_dvqdd"]
@@ -15,6 +16,10 @@ albedo_color = Color(0.827451, 0.780392, 1, 1)
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_dd6ii"]
 albedo_color = Color(1, 0.827451, 0.768627, 1)
+albedo_texture = ExtResource("2_1fxsp")
+uv1_scale = Vector3(2.695, 2.695, 2.695)
+uv1_triplanar = true
+uv1_world_triplanar = true
 
 [node name="Kitchen" type="Node3D"]
 

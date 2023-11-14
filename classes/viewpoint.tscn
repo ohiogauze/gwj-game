@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://s5v5hupqoiq"]
+
+[ext_resource type="Script" path="res://classes/viewpoint.gd" id="1_028aa"]
+
+[node name="Viewpoint" type="Node"]
+script = ExtResource("1_028aa")
+
+[node name="Camera3D" type="Camera3D" parent="."]

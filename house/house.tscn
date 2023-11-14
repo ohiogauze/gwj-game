@@ -1,11 +1,14 @@
-[gd_scene load_steps=22 format=3 uid="uid://baryd3ae1wo6s"]
+[gd_scene load_steps=29 format=3 uid="uid://baryd3ae1wo6s"]
 
 [ext_resource type="PackedScene" uid="uid://beefg1sidd60x" path="res://house/rooms/bathroom.tscn" id="1_vbner"]
+[ext_resource type="Script" path="res://house/house.gd" id="1_wmed1"]
 [ext_resource type="PackedScene" uid="uid://bin63aasnn35o" path="res://house/rooms/bedroom.tscn" id="2_8j1m5"]
 [ext_resource type="PackedScene" uid="uid://s4slrcb5ftuq" path="res://house/rooms/kitchen.tscn" id="3_frgba"]
 [ext_resource type="PackedScene" uid="uid://jht3ds2x2fl5" path="res://house/rooms/lounge_room.tscn" id="4_0rjjc"]
 [ext_resource type="PackedScene" uid="uid://btq4c6h0ddgk6" path="res://house/rooms/office.tscn" id="5_7s0ep"]
 [ext_resource type="Texture2D" uid="uid://b86ue0l2xwhvm" path="res://icon.svg" id="6_1g3jr"]
+[ext_resource type="PackedScene" uid="uid://s5v5hupqoiq" path="res://classes/viewpoint.tscn" id="6_xcv2n"]
+[ext_resource type="Script" path="res://classes/clickables/viewpoint_sender.gd" id="8_6fu31"]
 
 [sub_resource type="Gradient" id="Gradient_xs0v5"]
 colors = PackedColorArray(0.929715, 0.929715, 0.929715, 1, 1, 1, 1, 1)
@@ -35,6 +38,18 @@ albedo_color = Color(0.509804, 0.298039, 0.168627, 1)
 [sub_resource type="BoxMesh" id="BoxMesh_o8xko"]
 material = SubResource("StandardMaterial3D_kx7ba")
 size = Vector3(3, 0.25, 10)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_u7mp0"]
+size = Vector3(0.0501153, 2.00772, 2.99443)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_jxg7a"]
+size = Vector3(0.0501153, 2.00772, 2.02329)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_oho2y"]
+size = Vector3(0.0501153, 2.00772, 1.0056)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_x4syk"]
+size = Vector3(0.1, 2.008, 1.006)
 
 [sub_resource type="Gradient" id="Gradient_huhy3"]
 colors = PackedColorArray(0.83496, 0.84, 0.7896, 1, 0.981667, 1, 0.89, 1)
@@ -76,6 +91,8 @@ tonemap_mode = 3
 tonemap_exposure = 0.5
 
 [node name="House" type="Node"]
+script = ExtResource("1_wmed1")
+viewpoint_path = NodePath("Viewpoints/Entrance")
 
 [node name="Ceiling" type="MeshInstance3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.08165e-12, 2.75, -4)
@@ -85,18 +102,39 @@ mesh = SubResource("PlaneMesh_nnfhe")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.08165e-12, -0.125, -2)
 mesh = SubResource("BoxMesh_o8xko")
 
+[node name="RayCast3D" type="RayCast3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.3621, 1.36262)
+target_position = Vector3(2.08165e-12, 2.08165e-12, -10)
+collide_with_areas = true
+
 [node name="Lights" type="Node" parent="."]
 
-[node name="OmniLight3D" type="OmniLight3D" parent="Lights"]
+[node name="Hallway1" type="OmniLight3D" parent="Lights"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.41206, 1.157)
 light_color = Color(1, 0.976471, 0.956863, 1)
 
-[node name="OmniLight3D2" type="OmniLight3D" parent="Lights"]
+[node name="Hallway2" type="OmniLight3D" parent="Lights"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.41206, -3.843)
 light_color = Color(1, 0.976471, 0.956863, 1)
 
 [node name="KitchenOverhead" type="OmniLight3D" parent="Lights"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.56232, 2.51865, -0.281885)
+light_color = Color(1, 0.976471, 0.956863, 1)
+
+[node name="Lounge" type="OmniLight3D" parent="Lights"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.56232, 2.51865, -5.89421)
+light_color = Color(1, 0.976471, 0.956863, 1)
+
+[node name="Bedroom" type="OmniLight3D" parent="Lights"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.08331, 2.51865, -7.79534)
+light_color = Color(1, 0.976471, 0.956863, 1)
+
+[node name="Bathroom" type="OmniLight3D" parent="Lights"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.60946, 2.51865, -3.79434)
+light_color = Color(1, 0.976471, 0.956863, 1)
+
+[node name="Office" type="OmniLight3D" parent="Lights"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.60946, 2.51865, 1.39445)
 light_color = Color(1, 0.976471, 0.956863, 1)
 
 [node name="Rooms" type="Node" parent="."]
@@ -118,8 +156,135 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.5, 2.08165e-12, 0.5)
 
 [node name="Viewpoints" type="Node" parent="."]
 
-[node name="Entrance" type="Camera3D" parent="Viewpoints"]
-transform = Transform3D(1, -3.85245e-16, 3.46876e-16, 3.46876e-16, 0.994522, 0.104528, -3.85245e-16, -0.104528, 0.994522, 2.08165e-12, 1.7, 3)
+[node name="Entrance" parent="Viewpoints" instance=ExtResource("6_xcv2n")]
+
+[node name="Camera3D" parent="Viewpoints/Entrance" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.3621, 1.36262)
+
+[node name="KitchenEntry" type="Area3D" parent="Viewpoints/Entrance"]
+transform = Transform3D(1, -3.48787e-16, 3.48787e-16, 3.48787e-16, 1, -3.48787e-16, -3.48787e-16, 3.48787e-16, 0.999999, -1.35646, 1.09727, -0.947688)
+script = ExtResource("8_6fu31")
+viewpoint_path = NodePath("../../Kitchen")
+title = "Kitchen"
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Viewpoints/Entrance/KitchenEntry"]
+transform = Transform3D(1, 1.58819e-22, -1.47575e-22, -1.21652e-31, 1, -1.12439e-23, 1.47575e-22, -1.47575e-22, 1, 2.08165e-12, 2.08165e-12, 2.08165e-12)
+shape = SubResource("BoxShape3D_u7mp0")
+
+[node name="LoungeEntry" type="Area3D" parent="Viewpoints/Entrance"]
+transform = Transform3D(1, -3.48787e-16, 3.48787e-16, 3.48787e-16, 1, -3.48787e-16, -3.48787e-16, 3.48787e-16, 0.999999, -1.44071, 1.09727, -5.16754)
+script = ExtResource("8_6fu31")
+viewpoint_path = NodePath("../../Lounge")
+title = "Lounge"
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Viewpoints/Entrance/LoungeEntry"]
+transform = Transform3D(1, 2.64698e-22, -2.53454e-22, -1.21652e-31, 1, -1.12439e-23, 2.53454e-22, -2.53454e-22, 1, 0, 0, 0.207674)
+shape = SubResource("BoxShape3D_jxg7a")
+
+[node name="BedroomDoor" type="Area3D" parent="Viewpoints/Entrance"]
+transform = Transform3D(-4.37114e-08, 3.48787e-16, 0.999999, 3.48787e-16, 1, -3.48787e-16, -1, 3.48787e-16, -4.37114e-08, 0.215932, 1.03474, -6.79222)
+script = ExtResource("8_6fu31")
+viewpoint_path = NodePath("../../Bedroom")
+title = "Bedroom"
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Viewpoints/Entrance/BedroomDoor"]
+transform = Transform3D(1, 2.64698e-22, 0, 0, 1, -2.00512e-26, 0, -2.687e-22, 1, 0, 0, 0.143786)
+shape = SubResource("BoxShape3D_oho2y")
+
+[node name="BathroomDoor" type="Area3D" parent="Viewpoints/Entrance"]
+transform = Transform3D(1, -3.48787e-16, 0, 3.48787e-16, 1, -3.48787e-16, 0, 3.48787e-16, 0.999999, 1.38955, 1.03474, -5.13142)
+script = ExtResource("8_6fu31")
+viewpoint_path = NodePath("../../Bathroom")
+title = "Bathroom"
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Viewpoints/Entrance/BathroomDoor"]
+transform = Transform3D(1, 2.64698e-22, 0, 0, 1, -2.00512e-26, 0, -2.687e-22, 1, 0, 0, 0.143786)
+shape = SubResource("BoxShape3D_oho2y")
+
+[node name="OfficeDoor" type="Area3D" parent="Viewpoints/Entrance"]
+transform = Transform3D(1, -3.48787e-16, 0, 3.48787e-16, 1, -3.48787e-16, 0, 3.48787e-16, 0.999999, 1.38955, 1.03474, -0.150293)
+script = ExtResource("8_6fu31")
+viewpoint_path = NodePath("../../Office")
+title = "Office"
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Viewpoints/Entrance/OfficeDoor"]
+transform = Transform3D(1, 2.64698e-22, 0, 0, 1, -2.00512e-26, 0, -2.687e-22, 1, 0, 0, 0.143786)
+shape = SubResource("BoxShape3D_oho2y")
+
+[node name="Kitchen" parent="Viewpoints" instance=ExtResource("6_xcv2n")]
+
+[node name="Camera3D" parent="Viewpoints/Kitchen" index="0"]
+transform = Transform3D(0.92521, -1.90352e-16, 0.379456, 3.48787e-16, 1, -3.48787e-16, -0.379456, 4.5505e-16, 0.92521, -2.578, 1.287, 2.033)
+
+[node name="KitchenEntry" type="Area3D" parent="Viewpoints/Kitchen"]
+transform = Transform3D(1, -3.48787e-16, 3.48787e-16, 3.48787e-16, 1, -3.48787e-16, -3.48787e-16, 3.48787e-16, 0.999999, -1.52256, 1.09727, -1.03849)
+script = ExtResource("8_6fu31")
+viewpoint_path = NodePath("../../Entrance")
+title = "Hallway"
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Viewpoints/Kitchen/KitchenEntry"]
+transform = Transform3D(1, 1.58819e-22, -1.47575e-22, -1.21652e-31, 1, -1.12439e-23, 1.47575e-22, -1.47575e-22, 1, 2.08165e-12, 2.08165e-12, 2.08165e-12)
+shape = SubResource("BoxShape3D_u7mp0")
+
+[node name="Lounge" parent="Viewpoints" instance=ExtResource("6_xcv2n")]
+
+[node name="Camera3D" parent="Viewpoints/Lounge" index="0"]
+transform = Transform3D(-0.891007, 4.69117e-16, 0.453991, 3.48787e-16, 1, -3.48787e-16, -0.453991, -1.52425e-16, -0.891007, -2.243, 1.287, -8.577)
+
+[node name="LoungeEntry" type="Area3D" parent="Viewpoints/Lounge"]
+transform = Transform3D(1, -3.48787e-16, 3.48787e-16, 3.48787e-16, 1, -3.48787e-16, -3.48787e-16, 3.48787e-16, 0.999999, -1.54633, 1.03474, -5.32043)
+script = ExtResource("8_6fu31")
+viewpoint_path = NodePath("../../Entrance")
+title = "Hallway"
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Viewpoints/Lounge/LoungeEntry"]
+transform = Transform3D(1, 2.64698e-22, -2.53454e-22, -1.21652e-31, 1, -1.12439e-23, 2.53454e-22, -2.53454e-22, 1, 0, 0, 0.207674)
+shape = SubResource("BoxShape3D_jxg7a")
+
+[node name="Bedroom" parent="Viewpoints" instance=ExtResource("6_xcv2n")]
+
+[node name="Camera3D" parent="Viewpoints/Bedroom" index="0"]
+transform = Transform3D(-0.520712, -1.16153e-16, -0.853733, 3.48787e-16, 1, -3.48787e-16, 0.853733, -4.79388e-16, -0.520712, -0.183538, 1.287, -10.1463)
+
+[node name="BedroomDoor" type="Area3D" parent="Viewpoints/Bedroom"]
+transform = Transform3D(-4.37114e-08, 3.48787e-16, 0.999999, 3.48787e-16, 1, -3.48787e-16, -1, 3.48787e-16, -4.37114e-08, 0.251528, 1.03474, -7.0888)
+script = ExtResource("8_6fu31")
+viewpoint_path = NodePath("../../Entrance")
+title = "Hallway"
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Viewpoints/Bedroom/BedroomDoor"]
+transform = Transform3D(1, 2.64698e-22, 0, 0, 1, -2.00512e-26, 0, -2.687e-22, 1, 0, 0, 0.143786)
+shape = SubResource("BoxShape3D_oho2y")
+
+[node name="Bathroom" parent="Viewpoints" instance=ExtResource("6_xcv2n")]
+
+[node name="Camera3D" parent="Viewpoints/Bathroom" index="0"]
+transform = Transform3D(0.861629, -4.77548e-16, -0.507538, 3.48787e-16, 1, -3.48787e-16, 0.507538, 1.23502e-16, 0.861629, 1.88134, 1.287, -2.85381)
+
+[node name="BathroomDoor" type="Area3D" parent="Viewpoints/Bathroom"]
+transform = Transform3D(1, -3.48787e-16, 0, 3.48787e-16, 1, -3.48787e-16, 0, 3.48787e-16, 0.999999, 1.54868, 1.03474, -5.11834)
+script = ExtResource("8_6fu31")
+viewpoint_path = NodePath("../../Entrance")
+title = "Hallway"
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Viewpoints/Bathroom/BathroomDoor"]
+transform = Transform3D(1, 2.64698e-22, 0, 0, 1, -2.00512e-26, 0, -2.687e-22, 1, 0, 0, 0.143786)
+shape = SubResource("BoxShape3D_x4syk")
+
+[node name="Office" parent="Viewpoints" instance=ExtResource("6_xcv2n")]
+
+[node name="Camera3D" parent="Viewpoints/Office" index="0"]
+transform = Transform3D(0.985109, -4.0356e-16, -0.171929, 3.48787e-16, 1, -3.48787e-16, 0.171929, 2.83627e-16, 0.985109, 2.322, 1.287, 2.318)
+
+[node name="OfficeDoor" type="Area3D" parent="Viewpoints/Office"]
+transform = Transform3D(1, -3.48787e-16, 0, 3.48787e-16, 1, -3.48787e-16, 0, 3.48787e-16, 0.999999, 1.54868, 1.03474, -0.146834)
+script = ExtResource("8_6fu31")
+viewpoint_path = NodePath("../../Entrance")
+title = "Hallway"
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Viewpoints/Office/OfficeDoor"]
+transform = Transform3D(1, 2.64698e-22, 0, 0, 1, -2.00512e-26, 0, -2.687e-22, 1, 0, 0, 0.143786)
+shape = SubResource("BoxShape3D_x4syk")
 
 [node name="Enclosure" type="CSGCombiner3D" parent="."]
 operation = 2
@@ -185,5 +350,40 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.471, 0.5, 2.08165e-12)
 operation = 2
 size = Vector3(0.2, 3, 1)
 
+[node name="HUD" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_default_cursor_shape = 3
+
+[node name="ClickableLabel" type="Label" parent="HUD"]
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -39.0
+offset_bottom = -16.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_offset_x = 1
+theme_override_constants/shadow_offset_y = 1
+theme_override_constants/outline_size = 4
+horizontal_alignment = 1
+
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_ege5q")
+
+[connection signal="mouse_exited" from="HUD" to="." method="_on_hud_mouse_exited"]
+
+[editable path="Viewpoints/Entrance"]
+[editable path="Viewpoints/Kitchen"]
+[editable path="Viewpoints/Lounge"]
+[editable path="Viewpoints/Bedroom"]
+[editable path="Viewpoints/Bathroom"]
+[editable path="Viewpoints/Office"]

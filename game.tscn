@@ -37,6 +37,7 @@ theme_override_constants/separation = 30
 
 [node name="SubViewportContainer" type="SubViewportContainer" parent="MarginContainer/HBoxContainer"]
 layout_mode = 2
+mouse_default_cursor_shape = 3
 
 [node name="SubViewport" type="SubViewport" parent="MarginContainer/HBoxContainer/SubViewportContainer"]
 own_world_3d = true
