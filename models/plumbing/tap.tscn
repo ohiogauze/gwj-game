@@ -1,0 +1,14 @@
+[gd_scene load_steps=2 format=3 uid="uid://dhc870mkp3qr6"]
+
+[ext_resource type="PackedScene" uid="uid://cuhcxeraumeny" path="res://models/plumbing/tap.blend" id="1_0exop"]
+
+[node name="tap" instance=ExtResource("1_0exop")]
+
+[node name="Cylinder" parent="." index="0"]
+transform = Transform3D(-0.0254563, 0, 0, 0, -0.0254563, 0, 0, 0, -0.0254563, -0.00361437, 0.028344, 0.00103533)
+
+[node name="Cylinder_001" parent="." index="1"]
+transform = Transform3D(0.0223489, 0, 0, 0, 0.0135884, 0, 0, 0, 0.0223489, -0.113761, 0.0143622, -0.000130057)
+
+[node name="Cylinder_002" parent="." index="2"]
+transform = Transform3D(0.0223489, 0, 0, 0, 0.0135884, 0, 0, 0, 0.0223489, 0.113568, 0.0143622, -0.000130057)
