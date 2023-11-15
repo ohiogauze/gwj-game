@@ -6,7 +6,7 @@ extends Button
 
 
 func setup(data: CatData) -> void:
-	if not data:
+	if not data or not data.id:
 		label.hide()
 		return
 

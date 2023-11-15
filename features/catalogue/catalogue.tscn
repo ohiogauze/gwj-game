@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" path="res://features/catalogue/catalogue.gd" id="1_8lh0q"]
 [ext_resource type="PackedScene" uid="uid://cdmx8gxxtww14" path="res://features/catalogue/catalogue_item.tscn" id="1_rfnd3"]
-[ext_resource type="PackedScene" uid="uid://cpwxxqx6lci6h" path="res://models/creatures/cat.blend" id="3_p06bf"]
+[ext_resource type="PackedScene" uid="uid://b46u2qswqgi0b" path="res://models/creatures/cat.tscn" id="3_6wwr8"]
 
 [node name="Catalogue" type="Control"]
 layout_mode = 3
@@ -197,7 +197,7 @@ render_target_update_mode = 4
 transform = Transform3D(1, -5.28425e-16, 2.98969e-16, 2.98969e-16, 0.857167, 0.515038, -5.28425e-16, -0.515038, 0.857167, 2.08165e-12, 0.68, 2.08165e-12)
 fov = 50.0
 
-[node name="cat" parent="Container/HBoxContainer/Details/VBoxContainer/Control/SubViewportContainer/SubViewport" instance=ExtResource("3_p06bf")]
+[node name="Cat" parent="Container/HBoxContainer/Details/VBoxContainer/Control/SubViewportContainer/SubViewport" instance=ExtResource("3_6wwr8")]
 transform = Transform3D(0.529919, -4.80617e-16, -0.848048, 3.48787e-16, 1, -3.48787e-16, 0.848048, -1.10959e-16, 0.529919, 0, 0, -0.734962)
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="Container/HBoxContainer/Details/VBoxContainer/Control/SubViewportContainer/SubViewport"]
@@ -237,4 +237,7 @@ horizontal_scroll_mode = 0
 
 [node name="Description" type="Label" parent="Container/HBoxContainer/Details/VBoxContainer/Control2/ScrollContainer"]
 layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
 text = "A POS cat."
+autowrap_mode = 3

@@ -1,4 +1,80 @@
-id,name,tagline,entry
-spag_cat,Spaghetti Cat,"Itsa me, spaghetti cat!","This is some placeholder text.
+id,name,tagline,entry,char_count,tone
+spag_cat,Spakitty,He was lost in the sauce.,"The cat slurps and squelches as it rubs up against you.
 
-Please for the love of god replace me."
+""Cheese moulds, and it's sold at higher prices, why not me? Why not me?""
+
+""Were you rescued?""
+
+""It's all a matter of persgetti.""",185,Disgust
+sink_cat,Sink Sphynx,A riddle pruney from the water.,"As you scoop it into the carrier, the wrinkly, fleshy mass pops and bubbles.
+
+""She shrieks, she squeals, gone white, she peels.""
+
+""Descend, then end, the egg and its hen.""",171,Paranoia
+bag_cat,Kibbles,Cat's out of the bag.,"""Crumbs, crumbs, crumbs!""
+
+""Hello, little one,"" you scratch at the portly kitten's chin.
+
+""Yummy, full tummy! It's nutritious deliciousness, courtesy of mummy!""",160,Doubt
+loaf_cat,Pure Bread,"Oh beauty, I take your breath away!","A small mass of wheezing fluff, the cat struggles to seek you out through shrouded eyes.
+
+""Come closer.""
+
+You lean in. You hear a single whisper on fish-scented breath, ""We ran out of kibble long ago.""",201,Shock
+tea_cat,Kittea,Something's brewing...,"The tiny kitten floats lazily in the well-aged tea, the stale smell of catnip wafting from the mug.
+
+""I thought cats hated water.""
+
+""Maybe some fear returning to their true form.""",179,Concern
+clog_cat,Drain Clog,We are legion.,"You hesitate slightly before scooping at the damp tangle of fur, hair and shower sludge.
+
+Two small eyes bubble to the surface as the tiny creature's legs stretch outwards, and it kneads at your palm.
+",201,Disgust
+loofa_cat,Floofa,Give me your skin.,"The spongy orb vibrates angrily as you lift it from the shower head.
+
+""Who awakens us?!"" it squeals.
+
+You feel a sharp pain as you stuff the orb away—two pinpricks of bloody red glare at you from the palm of your hand.",218,Shock
+sploot_cat,Splootpaste,"Twice a day, minty fresh!","""9 out of 10 cats recommend brushing your teeth.""
+
+""And if I choose not to?""
+
+""Either way, teeth are easily digestible.""
+
+""What do you mean by that?""
+
+The cat stretches and settles back into her tube.",200,Concern
+alcatraz_cat,Alcatraz,I 'ain't no rat!,"An explosion of black fur stares at you from the wall cavity.
+
+""Rats! The fuzz! Just walk away mate.""
+
+""I'm sorry, kid, but you're comin' with me.""
+
+""You 'ain't got tangible evidence! You can't prove nothin'!""",209,Paranoia
+towel_cat,Meowel,It's honest work.,"The flat cat's arms remain splayed above his head after you unhook him.
+
+""You don't look wet! I'm only for drying!""
+
+""On to better things, buddy.""
+
+""You sure you can't just, like, spill a cup of water or something?""",215,Doubt
+caterpillar_cat,Caterpillar,,,0,
+paws_cat,Paws,,,0,
+vcr_cat,VCR,,,0,
+catatoe_cat,Couch Catatoe,,,0,
+,,,,0,
+,,,,0,
+,,,,0,
+,,,,0,
+,,,,0,
+,,,,0,
+,,,,0,
+,,,,0,
+,,,,0,
+,,,,0,
+,,,,0,
+,,,,0,
+,,,,0,
+,,,,0,
+,,,,0,
+,,,,0,
