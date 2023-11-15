@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" path="res://features/catalogue/catalogue.gd" id="1_8lh0q"]
 [ext_resource type="PackedScene" uid="uid://cdmx8gxxtww14" path="res://features/catalogue/catalogue_item.tscn" id="1_rfnd3"]
-[ext_resource type="PackedScene" uid="uid://cpwxxqx6lci6h" path="res://models/cat.blend" id="3_p06bf"]
+[ext_resource type="PackedScene" uid="uid://cpwxxqx6lci6h" path="res://models/creatures/cat.blend" id="3_p06bf"]
 
 [node name="Catalogue" type="Control"]
 layout_mode = 3
@@ -58,92 +58,100 @@ grow_horizontal = 2
 grow_vertical = 2
 color = Color(0.0352941, 0.0509804, 0.215686, 1)
 
-[node name="Items" type="GridContainer" parent="Container/HBoxContainer/Control"]
+[node name="VBoxContainer" type="VBoxContainer" parent="Container/HBoxContainer/Control"]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+
+[node name="Items" type="GridContainer" parent="Container/HBoxContainer/Control/VBoxContainer"]
+layout_mode = 2
 size_flags_horizontal = 3
+size_flags_vertical = 3
 theme_override_constants/h_separation = 10
 theme_override_constants/v_separation = 20
 columns = 5
 
-[node name="CatalogueItem" parent="Container/HBoxContainer/Control/Items" instance=ExtResource("1_rfnd3")]
+[node name="CatalogueItem" parent="Container/HBoxContainer/Control/VBoxContainer/Items" instance=ExtResource("1_rfnd3")]
 layout_mode = 2
 
-[node name="CatalogueItem2" parent="Container/HBoxContainer/Control/Items" instance=ExtResource("1_rfnd3")]
+[node name="CatalogueItem2" parent="Container/HBoxContainer/Control/VBoxContainer/Items" instance=ExtResource("1_rfnd3")]
 layout_mode = 2
 
-[node name="CatalogueItem3" parent="Container/HBoxContainer/Control/Items" instance=ExtResource("1_rfnd3")]
+[node name="CatalogueItem3" parent="Container/HBoxContainer/Control/VBoxContainer/Items" instance=ExtResource("1_rfnd3")]
 layout_mode = 2
 
-[node name="CatalogueItem4" parent="Container/HBoxContainer/Control/Items" instance=ExtResource("1_rfnd3")]
+[node name="CatalogueItem4" parent="Container/HBoxContainer/Control/VBoxContainer/Items" instance=ExtResource("1_rfnd3")]
 layout_mode = 2
 
-[node name="CatalogueItem5" parent="Container/HBoxContainer/Control/Items" instance=ExtResource("1_rfnd3")]
+[node name="CatalogueItem5" parent="Container/HBoxContainer/Control/VBoxContainer/Items" instance=ExtResource("1_rfnd3")]
 layout_mode = 2
 
-[node name="CatalogueItem6" parent="Container/HBoxContainer/Control/Items" instance=ExtResource("1_rfnd3")]
+[node name="CatalogueItem6" parent="Container/HBoxContainer/Control/VBoxContainer/Items" instance=ExtResource("1_rfnd3")]
 layout_mode = 2
 
-[node name="CatalogueItem7" parent="Container/HBoxContainer/Control/Items" instance=ExtResource("1_rfnd3")]
+[node name="CatalogueItem7" parent="Container/HBoxContainer/Control/VBoxContainer/Items" instance=ExtResource("1_rfnd3")]
 layout_mode = 2
 
-[node name="CatalogueItem8" parent="Container/HBoxContainer/Control/Items" instance=ExtResource("1_rfnd3")]
+[node name="CatalogueItem8" parent="Container/HBoxContainer/Control/VBoxContainer/Items" instance=ExtResource("1_rfnd3")]
 layout_mode = 2
 
-[node name="CatalogueItem9" parent="Container/HBoxContainer/Control/Items" instance=ExtResource("1_rfnd3")]
+[node name="CatalogueItem9" parent="Container/HBoxContainer/Control/VBoxContainer/Items" instance=ExtResource("1_rfnd3")]
 layout_mode = 2
 
-[node name="CatalogueItem10" parent="Container/HBoxContainer/Control/Items" instance=ExtResource("1_rfnd3")]
+[node name="CatalogueItem10" parent="Container/HBoxContainer/Control/VBoxContainer/Items" instance=ExtResource("1_rfnd3")]
 layout_mode = 2
 
-[node name="CatalogueItem11" parent="Container/HBoxContainer/Control/Items" instance=ExtResource("1_rfnd3")]
+[node name="CatalogueItem11" parent="Container/HBoxContainer/Control/VBoxContainer/Items" instance=ExtResource("1_rfnd3")]
 layout_mode = 2
 
-[node name="CatalogueItem12" parent="Container/HBoxContainer/Control/Items" instance=ExtResource("1_rfnd3")]
+[node name="CatalogueItem12" parent="Container/HBoxContainer/Control/VBoxContainer/Items" instance=ExtResource("1_rfnd3")]
 layout_mode = 2
 
-[node name="CatalogueItem13" parent="Container/HBoxContainer/Control/Items" instance=ExtResource("1_rfnd3")]
+[node name="CatalogueItem13" parent="Container/HBoxContainer/Control/VBoxContainer/Items" instance=ExtResource("1_rfnd3")]
 layout_mode = 2
 
-[node name="CatalogueItem14" parent="Container/HBoxContainer/Control/Items" instance=ExtResource("1_rfnd3")]
+[node name="CatalogueItem14" parent="Container/HBoxContainer/Control/VBoxContainer/Items" instance=ExtResource("1_rfnd3")]
 layout_mode = 2
 
-[node name="CatalogueItem15" parent="Container/HBoxContainer/Control/Items" instance=ExtResource("1_rfnd3")]
+[node name="CatalogueItem15" parent="Container/HBoxContainer/Control/VBoxContainer/Items" instance=ExtResource("1_rfnd3")]
 layout_mode = 2
 
-[node name="CatalogueItem16" parent="Container/HBoxContainer/Control/Items" instance=ExtResource("1_rfnd3")]
+[node name="CatalogueItem16" parent="Container/HBoxContainer/Control/VBoxContainer/Items" instance=ExtResource("1_rfnd3")]
 layout_mode = 2
 
-[node name="CatalogueItem17" parent="Container/HBoxContainer/Control/Items" instance=ExtResource("1_rfnd3")]
+[node name="CatalogueItem17" parent="Container/HBoxContainer/Control/VBoxContainer/Items" instance=ExtResource("1_rfnd3")]
 layout_mode = 2
 
-[node name="CatalogueItem18" parent="Container/HBoxContainer/Control/Items" instance=ExtResource("1_rfnd3")]
+[node name="CatalogueItem18" parent="Container/HBoxContainer/Control/VBoxContainer/Items" instance=ExtResource("1_rfnd3")]
 layout_mode = 2
 
-[node name="CatalogueItem19" parent="Container/HBoxContainer/Control/Items" instance=ExtResource("1_rfnd3")]
+[node name="CatalogueItem19" parent="Container/HBoxContainer/Control/VBoxContainer/Items" instance=ExtResource("1_rfnd3")]
 layout_mode = 2
 
-[node name="CatalogueItem20" parent="Container/HBoxContainer/Control/Items" instance=ExtResource("1_rfnd3")]
+[node name="CatalogueItem20" parent="Container/HBoxContainer/Control/VBoxContainer/Items" instance=ExtResource("1_rfnd3")]
 layout_mode = 2
 
-[node name="CatalogueItem21" parent="Container/HBoxContainer/Control/Items" instance=ExtResource("1_rfnd3")]
+[node name="CatalogueItem21" parent="Container/HBoxContainer/Control/VBoxContainer/Items" instance=ExtResource("1_rfnd3")]
 layout_mode = 2
 
-[node name="CatalogueItem22" parent="Container/HBoxContainer/Control/Items" instance=ExtResource("1_rfnd3")]
+[node name="CatalogueItem22" parent="Container/HBoxContainer/Control/VBoxContainer/Items" instance=ExtResource("1_rfnd3")]
 layout_mode = 2
 
-[node name="CatalogueItem23" parent="Container/HBoxContainer/Control/Items" instance=ExtResource("1_rfnd3")]
+[node name="CatalogueItem23" parent="Container/HBoxContainer/Control/VBoxContainer/Items" instance=ExtResource("1_rfnd3")]
 layout_mode = 2
 
-[node name="CatalogueItem24" parent="Container/HBoxContainer/Control/Items" instance=ExtResource("1_rfnd3")]
+[node name="CatalogueItem24" parent="Container/HBoxContainer/Control/VBoxContainer/Items" instance=ExtResource("1_rfnd3")]
 layout_mode = 2
 
-[node name="CatalogueItem25" parent="Container/HBoxContainer/Control/Items" instance=ExtResource("1_rfnd3")]
+[node name="CatalogueItem25" parent="Container/HBoxContainer/Control/VBoxContainer/Items" instance=ExtResource("1_rfnd3")]
 layout_mode = 2
+
+[node name="Button" type="Button" parent="Container/HBoxContainer/Control/VBoxContainer"]
+layout_mode = 2
+text = "Return to Game"
 
 [node name="Details" type="Control" parent="Container/HBoxContainer"]
 custom_minimum_size = Vector2(190, 2.08165e-12)

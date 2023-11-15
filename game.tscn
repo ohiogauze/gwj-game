@@ -1,6 +1,8 @@
-[gd_scene load_steps=2 format=3 uid="uid://dw0olb1a80i2s"]
+[gd_scene load_steps=4 format=3 uid="uid://dw0olb1a80i2s"]
 
 [ext_resource type="PackedScene" uid="uid://baryd3ae1wo6s" path="res://house/house.tscn" id="1_l31aa"]
+[ext_resource type="Script" path="res://game.gd" id="1_ptp86"]
+[ext_resource type="PackedScene" uid="uid://j72804edpiwd" path="res://features/catalogue/catalogue.tscn" id="2_4bl3y"]
 
 [node name="Game" type="Control"]
 layout_mode = 3
@@ -9,6 +11,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_ptp86")
 
 [node name="Background" type="ColorRect" parent="."]
 layout_mode = 1
@@ -77,3 +80,18 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 color = Color(0, 0, 0, 1)
+
+[node name="Button" type="Button" parent="MarginContainer/HBoxContainer/VBoxContainer/Text"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Open CATalogue"
+
+[node name="Catalogue" parent="." instance=ExtResource("2_4bl3y")]
+visible = false
+layout_mode = 1
+
+[connection signal="pressed" from="MarginContainer/HBoxContainer/VBoxContainer/Text/Button" to="." method="_on_Catalogue_button_pressed"]

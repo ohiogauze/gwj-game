@@ -3,10 +3,16 @@ class_name Catalogue
 extends Control
 
 
-@onready var items = $Container/InnerContainer/HBoxContainer/Items.get_children() as Array[CatalogueItem]
+signal closed
+
+@onready var items = $Container/HBoxContainer/Control/VBoxContainer/Items.get_children() as Array[CatalogueItem]
 
 
 func _ready() -> void:
 	for item in items:
 		var index = item.get_index()
 		item.setup(DataLibrary.cats[index] if DataLibrary.cats.size() > index else null)
+
+	$Container/HBoxContainer/Control/VBoxContainer/Button.pressed.connect(func():
+		closed.emit()
+	)

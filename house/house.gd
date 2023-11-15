@@ -28,6 +28,11 @@ func _process(delta: float) -> void:
 	var camera := viewport.get_camera_3d()
 	var mouse_position := viewport.get_mouse_position()
 
+	if mouse_position.x < 0 or mouse_position.x >= 380 or mouse_position.y < 0 or mouse_position.y >= 320:
+		clickable = null
+		clickable_label.text = ""
+		return
+
 	var from = camera.project_ray_origin(mouse_position)
 	var to = from + camera.project_ray_normal(mouse_position) * 100
 
