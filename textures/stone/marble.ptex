@@ -1,0 +1,165 @@
+{
+	"connections": [
+		{
+			"from": "fbm2",
+			"from_port": 0,
+			"to": "blend2",
+			"to_port": 0
+		},
+		{
+			"from": "clouds_noise",
+			"from_port": 0,
+			"to": "blend2",
+			"to_port": 1
+		},
+		{
+			"from": "colorize",
+			"from_port": 0,
+			"to": "Material",
+			"to_port": 0
+		},
+		{
+			"from": "blend2",
+			"from_port": 0,
+			"to": "colorize",
+			"to_port": 0
+		}
+	],
+	"label": "Graph",
+	"longdesc": "",
+	"name": "@@322",
+	"node_position": {
+		"x": 0,
+		"y": 0
+	},
+	"nodes": [
+		{
+			"export_last_target": "Godot/Godot 4 Standard",
+			"export_paths": {
+				"Godot/Godot 4 Standard": "/Users/jojo/Projects/Repos/github.com/ohiogauze/gwj-game/textures/stone/marble"
+			},
+			"name": "Material",
+			"node_position": {
+				"x": 324,
+				"y": 138
+			},
+			"parameters": {
+				"albedo_color": {
+					"a": 1,
+					"b": 1,
+					"g": 1,
+					"r": 1,
+					"type": "Color"
+				},
+				"ao": 1,
+				"depth_scale": 0.5,
+				"emission_energy": 1,
+				"flags_transparent": true,
+				"metallic": 0,
+				"normal": 1,
+				"roughness": 1,
+				"size": 7,
+				"sss": 1
+			},
+			"seed_int": 0,
+			"type": "material"
+		},
+		{
+			"name": "fbm2",
+			"node_position": {
+				"x": -592.559998,
+				"y": 397.23999
+			},
+			"parameters": {
+				"folds": 0,
+				"iterations": 5,
+				"noise": 0,
+				"offset": 0,
+				"persistence": 0.5,
+				"scale_x": 8,
+				"scale_y": 8
+			},
+			"seed_int": 0,
+			"type": "fbm2"
+		},
+		{
+			"name": "clouds_noise",
+			"node_position": {
+				"x": -437,
+				"y": 735
+			},
+			"parameters": {
+				"n_scale": 1,
+				"param0": 11,
+				"param1": 0
+			},
+			"seed_int": 0,
+			"type": "clouds_noise"
+		},
+		{
+			"generic_size": 1,
+			"name": "blend2",
+			"node_position": {
+				"x": -355,
+				"y": 94
+			},
+			"parameters": {
+				"amount1": 0.5,
+				"blend_type1": 0
+			},
+			"seed_int": 0,
+			"type": "blend2"
+		},
+		{
+			"name": "colorize",
+			"node_position": {
+				"x": -4,
+				"y": 160
+			},
+			"parameters": {
+				"gradient": {
+					"interpolation": 1,
+					"points": [
+						{
+							"a": 1,
+							"b": 0.129412,
+							"g": 0.168627,
+							"pos": 0,
+							"r": 0.231373
+						},
+						{
+							"a": 1,
+							"b": 0.360784,
+							"g": 0.356863,
+							"pos": 0.160387,
+							"r": 0.403922
+						},
+						{
+							"a": 1,
+							"b": 0.596078,
+							"g": 0.631373,
+							"pos": 0.579297,
+							"r": 0.67451
+						},
+						{
+							"a": 1,
+							"b": 0.627451,
+							"g": 0.701961,
+							"pos": 1,
+							"r": 0.741176
+						}
+					],
+					"type": "Gradient"
+				}
+			},
+			"seed_int": 0,
+			"type": "colorize"
+		}
+	],
+	"parameters": {
+
+	},
+	"seed_int": 0,
+	"shortdesc": "",
+	"type": "graph"
+}

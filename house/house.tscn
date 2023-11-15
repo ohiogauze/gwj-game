@@ -1,4 +1,4 @@
-[gd_scene load_steps=29 format=3 uid="uid://baryd3ae1wo6s"]
+[gd_scene load_steps=31 format=3 uid="uid://baryd3ae1wo6s"]
 
 [ext_resource type="PackedScene" uid="uid://beefg1sidd60x" path="res://house/rooms/bathroom.tscn" id="1_vbner"]
 [ext_resource type="Script" path="res://house/house.gd" id="1_wmed1"]
@@ -6,7 +6,6 @@
 [ext_resource type="PackedScene" uid="uid://s4slrcb5ftuq" path="res://house/rooms/kitchen.tscn" id="3_frgba"]
 [ext_resource type="PackedScene" uid="uid://jht3ds2x2fl5" path="res://house/rooms/lounge_room.tscn" id="4_0rjjc"]
 [ext_resource type="PackedScene" uid="uid://btq4c6h0ddgk6" path="res://house/rooms/office.tscn" id="5_7s0ep"]
-[ext_resource type="Texture2D" uid="uid://b86ue0l2xwhvm" path="res://icon.svg" id="6_1g3jr"]
 [ext_resource type="PackedScene" uid="uid://s5v5hupqoiq" path="res://classes/viewpoint.tscn" id="6_xcv2n"]
 [ext_resource type="Script" path="res://classes/clickables/viewpoint_sender.gd" id="8_6fu31"]
 
@@ -67,8 +66,21 @@ noise = SubResource("FastNoiseLite_vkpya")
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_cu6s4"]
 albedo_texture = SubResource("NoiseTexture2D_bt5yg")
 
+[sub_resource type="Gradient" id="Gradient_hdju5"]
+colors = PackedColorArray(0.670588, 0.662745, 0.603922, 1, 0.66, 0.6501, 0.594, 1)
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_x23pl"]
+frequency = 0.0375
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_6kt44"]
+width = 128
+height = 128
+seamless = true
+color_ramp = SubResource("Gradient_hdju5")
+noise = SubResource("FastNoiseLite_x23pl")
+
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_1tpsw"]
-albedo_texture = ExtResource("6_1g3jr")
+albedo_texture = SubResource("NoiseTexture2D_6kt44")
 uv1_triplanar = true
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_km05l"]
@@ -118,8 +130,10 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.41206, -3.843)
 light_color = Color(1, 0.976471, 0.956863, 1)
 
 [node name="KitchenOverhead" type="OmniLight3D" parent="Lights"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.56232, 2.51865, -0.281885)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.56232, 2.2694, -0.281885)
 light_color = Color(1, 0.976471, 0.956863, 1)
+light_energy = 1.41
+omni_attenuation = 0.68302
 
 [node name="Lounge" type="OmniLight3D" parent="Lights"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.56232, 2.51865, -5.89421)
