@@ -16,3 +16,11 @@ func _ready():
 func _on_Catalogue_button_pressed() -> void:
 	house.viewpoint.deactivate()
 	catalogue.show()
+
+
+func _on_house_cat_collected(id) -> void:
+	$CatCollectionScreen.play(id)
+
+
+func _on_cat_collection_screen_closed() -> void:
+	house.viewpoint.activate()

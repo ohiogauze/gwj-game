@@ -1,0 +1,190 @@
+[gd_scene load_steps=9 format=3 uid="uid://c8hp1xr2183is"]
+
+[ext_resource type="PackedScene" uid="uid://cso55okti76ph" path="res://features/cat_collection_screen/cat_rays.tscn" id="1_7hi11"]
+[ext_resource type="Script" path="res://features/cat_collection_screen/cat_collection_screen.gd" id="1_jfdct"]
+[ext_resource type="FontFile" uid="uid://bexq03pmtmlcr" path="res://fonts/pixel_arial_bold.TTF" id="1_luosg"]
+[ext_resource type="Shader" path="res://shaders/4_bit_colour.gdshader" id="3_81ruj"]
+[ext_resource type="PackedScene" uid="uid://b46u2qswqgi0b" path="res://models/creatures/cat.tscn" id="4_40aep"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_jfpxc"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_4uvun"]
+shader = ExtResource("3_81ruj")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_cvsf2"]
+shader = ExtResource("3_81ruj")
+
+[node name="CatCollectionScreen" type="Control"]
+material = SubResource("ShaderMaterial_jfpxc")
+custom_minimum_size = Vector2(380, 320)
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_jfdct")
+
+[node name="Background" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 20.0
+offset_top = 20.0
+offset_right = -240.0
+offset_bottom = -20.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 0.25098)
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 20.0
+offset_top = 20.0
+offset_right = -240.0
+offset_bottom = -20.0
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset = Vector2(190, 160)
+theme_override_constants/margin_left = 20
+theme_override_constants/margin_top = 20
+theme_override_constants/margin_right = 20
+theme_override_constants/margin_bottom = 20
+
+[node name="Control" type="Control" parent="MarginContainer"]
+layout_mode = 2
+
+[node name="CatRays" parent="MarginContainer/Control" instance=ExtResource("1_7hi11")]
+material = SubResource("ShaderMaterial_4uvun")
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -150.0
+offset_top = -150.0
+offset_right = 150.0
+offset_bottom = 150.0
+scale = Vector2(0.75, 0.75)
+pivot_offset = Vector2(150, 150)
+size_flags_horizontal = 4
+size_flags_vertical = 4
+
+[node name="Close" type="Button" parent="MarginContainer/Control"]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -54.0
+offset_top = -30.0
+offset_right = 54.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_fonts/font = ExtResource("1_luosg")
+text = "Continue"
+
+[node name="SubViewportContainer" type="SubViewportContainer" parent="MarginContainer/Control"]
+material = SubResource("ShaderMaterial_cvsf2")
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -125.0
+offset_top = 20.0
+offset_right = 125.0
+offset_bottom = 250.0
+grow_horizontal = 2
+
+[node name="SubViewport" type="SubViewport" parent="MarginContainer/Control/SubViewportContainer"]
+transparent_bg = true
+handle_input_locally = false
+size = Vector2i(250, 230)
+render_target_update_mode = 4
+
+[node name="Cat" parent="MarginContainer/Control/SubViewportContainer/SubViewport" instance=ExtResource("4_40aep")]
+
+[node name="Camera3D" type="Camera3D" parent="MarginContainer/Control/SubViewportContainer/SubViewport"]
+transform = Transform3D(0.707107, -0.353553, 0.612372, 0, 0.866025, 0.5, -0.707107, -0.353553, 0.612372, 0.25, 0.415, 0.4)
+
+[node name="SpotLight3D" type="SpotLight3D" parent="MarginContainer/Control/SubViewportContainer/SubViewport"]
+transform = Transform3D(0.827081, -0.285279, 0.484307, 3.00525e-16, 0.861629, 0.507538, -0.562083, -0.419775, 0.712637, 0.659658, 0.8349, 0.643836)
+
+[node name="Name" type="ColorRect" parent="."]
+custom_minimum_size = Vector2(190, 145)
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -210.0
+offset_top = 20.0
+offset_right = -20.0
+offset_bottom = 165.0
+grow_horizontal = 0
+color = Color(0, 0, 0, 1)
+
+[node name="CenterContainer" type="CenterContainer" parent="Name"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Name/CenterContainer"]
+custom_minimum_size = Vector2(170, 2.08165e-12)
+layout_mode = 2
+
+[node name="Label" type="Label" parent="Name/CenterContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("1_luosg")
+theme_override_font_sizes/font_size = 8
+text = "YOU FOUND"
+horizontal_alignment = 1
+
+[node name="CatName" type="Label" parent="Name/CenterContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("1_luosg")
+theme_override_font_sizes/font_size = 16
+text = "SPAG CAT"
+horizontal_alignment = 1
+autowrap_mode = 3
+
+[node name="Tagline" type="ColorRect" parent="."]
+custom_minimum_size = Vector2(190, 145)
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -210.0
+offset_top = 195.0
+offset_right = -20.0
+offset_bottom = 340.0
+grow_horizontal = 0
+color = Color(0, 0, 0, 1)
+
+[node name="Label" type="Label" parent="Tagline"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 10.0
+offset_top = 10.0
+offset_right = -10.0
+offset_bottom = -10.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("1_luosg")
+theme_override_font_sizes/font_size = 8
+text = "A riddle pruney from the water."
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
+
+[connection signal="pressed" from="MarginContainer/Control/Close" to="." method="_on_close_pressed"]

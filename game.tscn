@@ -1,10 +1,11 @@
-[gd_scene load_steps=7 format=3 uid="uid://dw0olb1a80i2s"]
+[gd_scene load_steps=8 format=3 uid="uid://dw0olb1a80i2s"]
 
 [ext_resource type="PackedScene" uid="uid://baryd3ae1wo6s" path="res://house/house.tscn" id="1_l31aa"]
 [ext_resource type="Script" path="res://game.gd" id="1_ptp86"]
 [ext_resource type="PackedScene" uid="uid://j72804edpiwd" path="res://features/catalogue/catalogue.tscn" id="2_4bl3y"]
 [ext_resource type="Shader" path="res://shaders/4_bit_colour.gdshader" id="2_8mvdw"]
 [ext_resource type="FontFile" uid="uid://bexq03pmtmlcr" path="res://fonts/pixel_arial_bold.TTF" id="3_uee2l"]
+[ext_resource type="PackedScene" uid="uid://c8hp1xr2183is" path="res://features/cat_collection_screen/cat_collection_screen.tscn" id="6_d8ade"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_tcxfg"]
 shader = ExtResource("2_8mvdw")
@@ -103,4 +104,10 @@ CATalogue"
 visible = false
 layout_mode = 1
 
+[node name="CatCollectionScreen" parent="." instance=ExtResource("6_d8ade")]
+visible = false
+layout_mode = 1
+
+[connection signal="cat_collected" from="MarginContainer/HBoxContainer/SubViewportContainer/SubViewport/House" to="." method="_on_house_cat_collected"]
 [connection signal="pressed" from="MarginContainer/HBoxContainer/VBoxContainer/Text/Button" to="." method="_on_Catalogue_button_pressed"]
+[connection signal="closed" from="CatCollectionScreen" to="." method="_on_cat_collection_screen_closed"]
