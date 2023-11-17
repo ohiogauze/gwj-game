@@ -1,9 +1,13 @@
-[gd_scene load_steps=5 format=3 uid="uid://dw0olb1a80i2s"]
+[gd_scene load_steps=7 format=3 uid="uid://dw0olb1a80i2s"]
 
 [ext_resource type="PackedScene" uid="uid://baryd3ae1wo6s" path="res://house/house.tscn" id="1_l31aa"]
 [ext_resource type="Script" path="res://game.gd" id="1_ptp86"]
 [ext_resource type="PackedScene" uid="uid://j72804edpiwd" path="res://features/catalogue/catalogue.tscn" id="2_4bl3y"]
+[ext_resource type="Shader" path="res://shaders/4_bit_colour.gdshader" id="2_8mvdw"]
 [ext_resource type="FontFile" uid="uid://bexq03pmtmlcr" path="res://fonts/pixel_arial_bold.TTF" id="3_uee2l"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_tcxfg"]
+shader = ExtResource("2_8mvdw")
 
 [node name="Game" type="Control"]
 layout_mode = 3
@@ -40,6 +44,7 @@ layout_mode = 2
 theme_override_constants/separation = 30
 
 [node name="SubViewportContainer" type="SubViewportContainer" parent="MarginContainer/HBoxContainer"]
+material = SubResource("ShaderMaterial_tcxfg")
 layout_mode = 2
 mouse_default_cursor_shape = 3
 
