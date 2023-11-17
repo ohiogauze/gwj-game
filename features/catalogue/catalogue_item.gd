@@ -7,7 +7,8 @@ extends Button
 
 func setup(data: CatData) -> void:
 	if not data or not data.id:
-		label.hide()
+		label.text = "???"
+		disabled = true
 		return
 
 	label.text = data.title

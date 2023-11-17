@@ -1,4 +1,4 @@
-[gd_scene load_steps=31 format=3 uid="uid://baryd3ae1wo6s"]
+[gd_scene load_steps=32 format=3 uid="uid://baryd3ae1wo6s"]
 
 [ext_resource type="PackedScene" uid="uid://beefg1sidd60x" path="res://house/rooms/bathroom.tscn" id="1_vbner"]
 [ext_resource type="Script" path="res://house/house.gd" id="1_wmed1"]
@@ -8,6 +8,7 @@
 [ext_resource type="PackedScene" uid="uid://btq4c6h0ddgk6" path="res://house/rooms/office.tscn" id="5_7s0ep"]
 [ext_resource type="PackedScene" uid="uid://s5v5hupqoiq" path="res://classes/viewpoint.tscn" id="6_xcv2n"]
 [ext_resource type="Script" path="res://classes/clickables/viewpoint_sender.gd" id="8_6fu31"]
+[ext_resource type="FontFile" uid="uid://bexq03pmtmlcr" path="res://fonts/pixel_arial_bold.TTF" id="9_mjti5"]
 
 [sub_resource type="Gradient" id="Gradient_xs0v5"]
 colors = PackedColorArray(0.929715, 0.929715, 0.929715, 1, 1, 1, 1, 1)
@@ -388,6 +389,8 @@ theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_constants/shadow_offset_x = 1
 theme_override_constants/shadow_offset_y = 1
 theme_override_constants/outline_size = 4
+theme_override_fonts/font = ExtResource("9_mjti5")
+theme_override_font_sizes/font_size = 16
 horizontal_alignment = 1
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]

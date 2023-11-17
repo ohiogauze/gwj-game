@@ -1,8 +1,14 @@
-[gd_scene load_steps=4 format=3 uid="uid://j72804edpiwd"]
+[gd_scene load_steps=7 format=3 uid="uid://j72804edpiwd"]
 
 [ext_resource type="Script" path="res://features/catalogue/catalogue.gd" id="1_8lh0q"]
 [ext_resource type="PackedScene" uid="uid://cdmx8gxxtww14" path="res://features/catalogue/catalogue_item.tscn" id="1_rfnd3"]
 [ext_resource type="PackedScene" uid="uid://b46u2qswqgi0b" path="res://models/creatures/cat.tscn" id="3_6wwr8"]
+[ext_resource type="FontFile" uid="uid://bexq03pmtmlcr" path="res://fonts/pixel_arial_bold.TTF" id="3_oru65"]
+[ext_resource type="FontFile" uid="uid://bbu5jwdsqixea" path="res://fonts/pixel_arial.TTF" id="5_l2kmr"]
+
+[sub_resource type="FontVariation" id="FontVariation_6sr4u"]
+base_font = ExtResource("5_l2kmr")
+spacing_glyph = 1
 
 [node name="Catalogue" type="Control"]
 layout_mode = 3
@@ -70,8 +76,8 @@ grow_vertical = 2
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
-theme_override_constants/h_separation = 10
-theme_override_constants/v_separation = 20
+theme_override_constants/h_separation = 0
+theme_override_constants/v_separation = 0
 columns = 5
 
 [node name="CatalogueItem" parent="Container/HBoxContainer/Control/VBoxContainer/Items" instance=ExtResource("1_rfnd3")]
@@ -151,6 +157,8 @@ layout_mode = 2
 
 [node name="Button" type="Button" parent="Container/HBoxContainer/Control/VBoxContainer"]
 layout_mode = 2
+theme_override_fonts/font = ExtResource("3_oru65")
+theme_override_font_sizes/font_size = 8
 text = "Return to Game"
 
 [node name="Details" type="Control" parent="Container/HBoxContainer"]
@@ -209,6 +217,8 @@ anchor_right = 1.0
 offset_top = 5.0
 offset_bottom = 31.0
 grow_horizontal = 2
+theme_override_fonts/font = ExtResource("3_oru65")
+theme_override_font_sizes/font_size = 8
 text = "Super Cat"
 horizontal_alignment = 1
 
@@ -239,5 +249,12 @@ horizontal_scroll_mode = 0
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_offset_x = 1
+theme_override_constants/shadow_offset_y = 1
+theme_override_constants/outline_size = 1
+theme_override_fonts/font = SubResource("FontVariation_6sr4u")
+theme_override_font_sizes/font_size = 8
 text = "A POS cat."
 autowrap_mode = 3
