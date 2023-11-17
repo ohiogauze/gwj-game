@@ -34,7 +34,7 @@ func _process(delta: float) -> void:
 		return
 
 	var from = camera.project_ray_origin(mouse_position)
-	var to = from + camera.project_ray_normal(mouse_position) * 100
+	var to = camera.project_ray_normal(mouse_position) * 100
 
 	raycast.global_position = from
 	raycast.target_position = to

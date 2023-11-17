@@ -58,11 +58,26 @@ towel_cat,Meowel,It's honest work.,"The flat cat's arms remain splayed above his
 ""On to better things, buddy.""
 
 ""You sure you can't just, like, spill a cup of water or something?""",215,Doubt
-caterpillar_cat,Caterpillar,,,0,
-paws_cat,Paws,,,0,
-vcr_cat,VCR,,,0,
-catatoe_cat,Couch Catatoe,,,0,
-,,,,0,
+caterpillar_cat,Caterpillar,I wonder what I'll be!,"A tiny green fuzzy cut creeps along the African Violets, smiling up at you with a mouth full of leaf.
+
+""Be careful what plants you eat, some are very toxic.""
+
+""Thanks?""",168,Doubt
+paws_cat,Paws,Time just keeps on moving.,"You push the pause button, eyes trained on the television screen. A small jolt of pain shoots up your thumb.
+
+The button hisses, ""it's all meaningless, push me as much as you want, you can't stop time from creeping.""",216,Paranoia
+vcr_cat,Griza,Do you even recognise me?,"The VCR coughs out a small furry rectangle shrouded in dust and debris.
+
+The feeble old cat croaks as you catch it, ""All I house now is a blur of memories, some precious and some not. I'm all that's left of her.""",212,Disgust
+catatoe_cat,Couch Catatoe,I thought I'd been forgotten.,"You lift the cushion, and a paper-thin cat flies out, landing silently on the floor. His body is so thin you can almost see through him.
+
+""There's a small fortune in there, put me back!""",186,Shock
+carpet_cat,Ruggins,It's rugs all the way down.,"Peeling away the thin layer of fur reveals another rug lying beneath.
+
+The diamond pattern of the rug clicks open, two sharp feline eyes looking up at you.
+
+""Don't look for things you don't want to find.""
+",205,Concern
 ,,,,0,
 ,,,,0,
 ,,,,0,
