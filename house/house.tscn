@@ -1,4 +1,4 @@
-[gd_scene load_steps=34 format=3 uid="uid://baryd3ae1wo6s"]
+[gd_scene load_steps=38 format=3 uid="uid://baryd3ae1wo6s"]
 
 [ext_resource type="PackedScene" uid="uid://beefg1sidd60x" path="res://house/rooms/bathroom.tscn" id="1_vbner"]
 [ext_resource type="Script" path="res://house/house.gd" id="1_wmed1"]
@@ -52,6 +52,19 @@ size = Vector3(0.0501153, 2.00772, 1.0056)
 [sub_resource type="CylinderShape3D" id="CylinderShape3D_61bxs"]
 height = 0.2961
 radius = 0.180991
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_6v4xf"]
+height = 0.130484
+radius = 0.0961285
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_ahy1m"]
+size = Vector3(0.821058, 0.153085, 0.408727)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_kescr"]
+size = Vector3(0.187942, 0.153085, 0.314124)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_r86bw"]
+size = Vector3(0.233658, 0.464859, 0.414738)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_x4syk"]
 size = Vector3(0.1, 2.008, 1.006)
@@ -242,7 +255,8 @@ shape = SubResource("BoxShape3D_oho2y")
 [node name="Kitchen" parent="Viewpoints" instance=ExtResource("6_xcv2n")]
 
 [node name="Camera3D" parent="Viewpoints/Kitchen" index="0"]
-transform = Transform3D(0.92521, -1.90352e-16, 0.379456, 3.48787e-16, 1, -3.48787e-16, -0.379456, 4.5505e-16, 0.92521, -2.578, 1.287, 2.033)
+transform = Transform3D(0.92521, -0.0982105, 0.366527, 3.36902e-16, 0.965926, 0.258819, -0.379456, -0.239462, 0.893684, -2.208, 1.922, 1.978)
+fov = 56.0
 
 [node name="KitchenEntry" type="Area3D" parent="Viewpoints/Kitchen"]
 transform = Transform3D(1, -3.48787e-16, 3.48787e-16, 3.48787e-16, 1, -3.48787e-16, -3.48787e-16, 3.48787e-16, 0.999999, -1.52256, 1.09727, -1.03849)
@@ -263,6 +277,46 @@ title = "Pot"
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Viewpoints/Kitchen/Pot"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.0092696, 0)
 shape = SubResource("CylinderShape3D_61bxs")
+
+[node name="Tea" type="Area3D" parent="Viewpoints/Kitchen"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.24666, 0.952253, -1.52023)
+script = ExtResource("9_0b80s")
+cat_id = "tea_cat"
+title = "Mug"
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Viewpoints/Kitchen/Tea"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.0669066, 0)
+shape = SubResource("CylinderShape3D_6v4xf")
+
+[node name="Sink" type="Area3D" parent="Viewpoints/Kitchen"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.22785, 0.952253, -2.1206)
+script = ExtResource("9_0b80s")
+cat_id = "sink_cat"
+title = "Sink"
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Viewpoints/Kitchen/Sink"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.078939, 0)
+shape = SubResource("BoxShape3D_ahy1m")
+
+[node name="BreadTin" type="Area3D" parent="Viewpoints/Kitchen"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.35217, 0.952253, -0.701547)
+script = ExtResource("9_0b80s")
+cat_id = "loaf_cat"
+title = "Bread Tin"
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Viewpoints/Kitchen/BreadTin"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.0569428, 0)
+shape = SubResource("BoxShape3D_kescr")
+
+[node name="FoodBag" type="Area3D" parent="Viewpoints/Kitchen"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.67671, 2.08165e-12, -1.46154)
+script = ExtResource("9_0b80s")
+cat_id = "bag_cat"
+title = "Cat Food"
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Viewpoints/Kitchen/FoodBag"]
+transform = Transform3D(0.977023, 0, -0.213133, 0, 1, 0, 0.213133, 0, 0.977023, -0.0359936, 0.227458, 0)
+shape = SubResource("BoxShape3D_r86bw")
 
 [node name="Lounge" parent="Viewpoints" instance=ExtResource("6_xcv2n")]
 

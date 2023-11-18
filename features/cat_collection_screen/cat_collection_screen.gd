@@ -41,7 +41,6 @@ func play(id: String) -> void:
 	close.show()
 
 
-
 func _on_close_pressed() -> void:
 	close.hide()
 	var tween = get_tree().create_tween()
@@ -49,4 +48,5 @@ func _on_close_pressed() -> void:
 	tween.play()
 
 	await tween.finished
+	hide()
 	closed.emit()

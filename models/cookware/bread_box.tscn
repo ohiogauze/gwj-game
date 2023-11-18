@@ -1,0 +1,5 @@
+[gd_scene load_steps=2 format=3 uid="uid://dd4ui2wyeafdg"]
+
+[ext_resource type="PackedScene" uid="uid://b8txex0s5161x" path="res://models/cookware/bread_box.blend" id="1_dv8ig"]
+
+[node name="BreadBox" instance=ExtResource("1_dv8ig")]
