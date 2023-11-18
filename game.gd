@@ -17,10 +17,12 @@ func _ready():
 
 func _on_Catalogue_button_pressed() -> void:
 	house.viewpoint.deactivate()
+	catalogue.setup()
 	catalogue.show()
 
 
 func _on_house_cat_collected(id) -> void:
+	catalogue.collected_cats.append(id)
 	$CatCollectionScreen.play(id)
 
 
