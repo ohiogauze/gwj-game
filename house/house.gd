@@ -4,6 +4,7 @@ extends Node
 
 
 signal cat_collected(id: String)
+signal viewpoint_changed(viewpoint: Viewpoint)
 
 ##
 @export_node_path var viewpoint_path: NodePath
@@ -24,6 +25,7 @@ func _ready():
 	for child in $Viewpoints.get_children():
 		child.activated.connect(func ():
 			viewpoint = child
+			viewpoint_changed.emit(viewpoint)
 		)
 		child.cat_collected.connect(collect_cat)
 

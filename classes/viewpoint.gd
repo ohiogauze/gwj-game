@@ -32,6 +32,16 @@ func deactivate():
 	_set_collision_mode(false)
 
 
+func get_cat_count() -> int:
+	var count = 0
+
+	for child in get_children():
+		if child is CatCollector:
+			count += 1
+
+	return count
+
+
 func _set_collision_mode(enabled: bool) -> void:
 	var mode = 1 if enabled else 0
 	for child in get_children():
