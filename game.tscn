@@ -1,10 +1,12 @@
-[gd_scene load_steps=7 format=3 uid="uid://dw0olb1a80i2s"]
+[gd_scene load_steps=9 format=3 uid="uid://dw0olb1a80i2s"]
 
 [ext_resource type="PackedScene" uid="uid://baryd3ae1wo6s" path="res://house/house.tscn" id="1_l31aa"]
 [ext_resource type="Script" path="res://game.gd" id="1_ptp86"]
 [ext_resource type="PackedScene" uid="uid://j72804edpiwd" path="res://features/catalogue/catalogue.tscn" id="2_4bl3y"]
 [ext_resource type="Shader" path="res://shaders/4_bit_colour.gdshader" id="2_8mvdw"]
 [ext_resource type="FontFile" uid="uid://bexq03pmtmlcr" path="res://fonts/pixel_arial_bold.TTF" id="3_uee2l"]
+[ext_resource type="PackedScene" uid="uid://v7dqxgwyx1kd" path="res://features/fur/fur.tscn" id="4_2vsee"]
+[ext_resource type="PackedScene" uid="uid://c8hp1xr2183is" path="res://features/cat_collection_screen/cat_collection_screen.tscn" id="6_d8ade"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_tcxfg"]
 shader = ExtResource("2_8mvdw")
@@ -61,18 +63,9 @@ custom_minimum_size = Vector2(190, 2.08165e-12)
 layout_mode = 2
 theme_override_constants/separation = 30
 
-[node name="FUR" type="Control" parent="MarginContainer/HBoxContainer/VBoxContainer"]
+[node name="FUR" parent="MarginContainer/HBoxContainer/VBoxContainer" instance=ExtResource("4_2vsee")]
+custom_minimum_size = Vector2(2.08165e-12, 145)
 layout_mode = 2
-size_flags_vertical = 3
-
-[node name="ColorRect" type="ColorRect" parent="MarginContainer/HBoxContainer/VBoxContainer/FUR"]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-color = Color(0, 0, 0, 1)
 
 [node name="Text" type="Control" parent="MarginContainer/HBoxContainer/VBoxContainer"]
 layout_mode = 2
@@ -103,4 +96,11 @@ CATalogue"
 visible = false
 layout_mode = 1
 
+[node name="CatCollectionScreen" parent="." instance=ExtResource("6_d8ade")]
+visible = false
+layout_mode = 1
+
+[connection signal="cat_collected" from="MarginContainer/HBoxContainer/SubViewportContainer/SubViewport/House" to="." method="_on_house_cat_collected"]
+[connection signal="viewpoint_changed" from="MarginContainer/HBoxContainer/SubViewportContainer/SubViewport/House" to="." method="_on_house_viewpoint_changed"]
 [connection signal="pressed" from="MarginContainer/HBoxContainer/VBoxContainer/Text/Button" to="." method="_on_Catalogue_button_pressed"]
+[connection signal="closed" from="CatCollectionScreen" to="." method="_on_cat_collection_screen_closed"]

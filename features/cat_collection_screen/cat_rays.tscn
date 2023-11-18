@@ -1,0 +1,59 @@
+[gd_scene load_steps=6 format=3 uid="uid://cso55okti76ph"]
+
+[ext_resource type="Script" path="res://features/cat_collection_screen/cat_rays.gd" id="1_14a44"]
+[ext_resource type="Texture2D" uid="uid://b0p6xg0n5sh77" path="res://textures/god_rays/bg.png" id="1_li6p2"]
+[ext_resource type="Texture2D" uid="uid://n2p5n4b1c7iy" path="res://textures/god_rays/ray_1.png" id="2_4wcdi"]
+[ext_resource type="Texture2D" uid="uid://c1qllx5kfi5vj" path="res://textures/god_rays/ray_3.png" id="2_6c131"]
+[ext_resource type="Texture2D" uid="uid://nkmglqtw2xmi" path="res://textures/god_rays/ray_2.png" id="3_0xv6v"]
+
+[node name="CatRays" type="Control"]
+custom_minimum_size = Vector2(300, 300)
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = -340.0
+offset_bottom = -60.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_14a44")
+
+[node name="Rays3" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+rotation = 0.261799
+pivot_offset = Vector2(150, 150)
+texture = ExtResource("2_6c131")
+
+[node name="Rays2" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset = Vector2(150, 150)
+texture = ExtResource("3_0xv6v")
+
+[node name="Rays1" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset = Vector2(150, 150)
+texture = ExtResource("2_4wcdi")
+
+[node name="Background" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_li6p2")

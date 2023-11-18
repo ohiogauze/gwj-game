@@ -1,8 +1,13 @@
-[gd_scene load_steps=13 format=3 uid="uid://s4slrcb5ftuq"]
+[gd_scene load_steps=18 format=3 uid="uid://s4slrcb5ftuq"]
 
 [ext_resource type="PackedScene" uid="uid://jttvw25ngok3" path="res://models/appliances/fridge.tscn" id="1_2o57c"]
 [ext_resource type="PackedScene" uid="uid://x2h2fifi02bn" path="res://models/cookware/stock_pot.tscn" id="2_q2mbe"]
 [ext_resource type="Material" uid="uid://baea21fcmn0a" path="res://textures/stone/marble.tres" id="2_uns82"]
+[ext_resource type="Material" uid="uid://dns04gxmj0knx" path="res://textures/metal/scratched_stainless.tres" id="3_0x4ra"]
+[ext_resource type="PackedScene" uid="uid://coy1s8eydh51y" path="res://models/catstuff/cat_food_bag.tscn" id="4_nwvbt"]
+[ext_resource type="PackedScene" uid="uid://dd4ui2wyeafdg" path="res://models/cookware/bread_box.tscn" id="5_hdaam"]
+[ext_resource type="PackedScene" uid="uid://dca0v7ua2oitw" path="res://models/cookware/mug.tscn" id="6_xcyox"]
+[ext_resource type="PackedScene" uid="uid://dhc870mkp3qr6" path="res://models/plumbing/tap.tscn" id="8_d5t1w"]
 
 [sub_resource type="Gradient" id="Gradient_f1cfo"]
 offsets = PackedFloat32Array(0.00829876, 0.473029, 1)
@@ -54,7 +59,7 @@ mesh = SubResource("BoxMesh_no3yp")
 [node name="Fridge" parent="." instance=ExtResource("1_2o57c")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.36498, 2.08165e-12, -2.09629)
 
-[node name="Counter" type="Node3D" parent="."]
+[node name="Counter" type="CSGCombiner3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, -2, 2.08165e-12, -2.5)
 
 [node name="Base" type="CSGPolygon3D" parent="Counter"]
@@ -68,5 +73,23 @@ polygon = PackedVector2Array(0, 0, 2.08165e-12, 3.05, 0.65, 3.05, 0.65, 0.65, 3.
 depth = 0.02
 material = ExtResource("2_uns82")
 
+[node name="Sink" type="CSGBox3D" parent="Counter"]
+transform = Transform3D(-4.37114e-08, -1, 4.37114e-08, 1, -4.37114e-08, 4.37114e-08, -4.37114e-08, 4.37114e-08, 1, 1.27945, 0.377655, -0.78147)
+operation = 2
+size = Vector3(0.4, 0.8, 0.4)
+material = ExtResource("3_0x4ra")
+
 [node name="StockPot" parent="." instance=ExtResource("2_q2mbe")]
 transform = Transform3D(0.953827, 0, -0.300356, 0, 1, 0, 0.300356, 0, 0.953827, 0.143, 0.82, -2.119)
+
+[node name="CatFoodBag" parent="." instance=ExtResource("4_nwvbt")]
+transform = Transform3D(-0.989923, 0, 0.14161, 0, 1, 0, -0.14161, 0, -0.989923, -1.21177, 0, -1.48072)
+
+[node name="BreadBox" parent="." instance=ExtResource("5_hdaam")]
+transform = Transform3D(-6.55671e-09, 0, 0.15, 0, 0.15, 0, -0.15, 0, -6.55671e-09, -1.85975, 0.82, -0.701607)
+
+[node name="Mug" parent="." instance=ExtResource("6_xcyox")]
+transform = Transform3D(0.000395317, 0, -0.074999, 0, 0.075, 0, 0.074999, 0, 0.000395317, -1.74677, 0.82, -1.52134)
+
+[node name="Tap" parent="." instance=ExtResource("8_d5t1w")]
+transform = Transform3D(1, 0, 8.35187e-23, 0, 1, 0, 0, 0, 1, -0.720555, 0.819913, -2.35634)
