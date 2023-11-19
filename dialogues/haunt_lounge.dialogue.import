@@ -1,0 +1,15 @@
+[remap]
+
+importer="dialogue_manager_compiler_11"
+type="Resource"
+uid="uid://bqddnt2ft8v7"
+path="res://.godot/imported/haunt_lounge.dialogue-70429963d415bc7ebf40913dd8615b05.tres"
+
+[deps]
+
+source_file="res://dialogues/haunt_lounge.dialogue"
+dest_files=["res://.godot/imported/haunt_lounge.dialogue-70429963d415bc7ebf40913dd8615b05.tres"]
+
+[params]
+
+defaults=true

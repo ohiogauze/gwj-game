@@ -1,0 +1,15 @@
+[remap]
+
+importer="dialogue_manager_compiler_11"
+type="Resource"
+uid="uid://ckv5v44vgas7k"
+path="res://.godot/imported/haunt_bathroom.dialogue-50ef3fc4006c3005391cd39434b5297e.tres"
+
+[deps]
+
+source_file="res://dialogues/haunt_bathroom.dialogue"
+dest_files=["res://.godot/imported/haunt_bathroom.dialogue-50ef3fc4006c3005391cd39434b5297e.tres"]
+
+[params]
+
+defaults=true

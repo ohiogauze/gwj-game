@@ -46,7 +46,7 @@ click={
 
 [internationalization]
 
-locale/translations_pot_files=PackedStringArray("res://dialogues/call_1.dialogue", "res://dialogues/haunt_kitchen.dialogue", "res://dialogues/opening.dialogue")
+locale/translations_pot_files=PackedStringArray("res://dialogues/call_1.dialogue", "res://dialogues/haunt_kitchen.dialogue", "res://dialogues/opening.dialogue", "res://dialogues/haunt_bathroom.dialogue", "res://dialogues/haunt_lounge.dialogue", "res://dialogues/haunt_final.dialogue", "res://dialogues/call_3.dialogue", "res://dialogues/call_2.dialogue")
 
 [rendering]
 

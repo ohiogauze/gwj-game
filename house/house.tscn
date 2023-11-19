@@ -326,6 +326,7 @@ transform = Transform3D(0.977023, 0, -0.213133, 0, 1, 0, 0.213133, 0, 0.977023, 
 shape = SubResource("BoxShape3D_r86bw")
 
 [node name="Lounge" parent="Viewpoints" instance=ExtResource("6_xcv2n")]
+haunt = "res://dialogues/haunt_lounge.dialogue"
 
 [node name="Camera3D" parent="Viewpoints/Lounge" index="0"]
 transform = Transform3D(-0.891007, 4.69117e-16, 0.453991, 3.48787e-16, 1, -3.48787e-16, -0.453991, -1.52425e-16, -0.891007, -2.243, 1.287, -8.577)
@@ -356,6 +357,7 @@ transform = Transform3D(1, 2.64698e-22, 0, 0, 1, -2.00512e-26, 0, -2.687e-22, 1,
 shape = SubResource("BoxShape3D_oho2y")
 
 [node name="Bathroom" parent="Viewpoints" instance=ExtResource("6_xcv2n")]
+haunt = "res://dialogues/haunt_bathroom.dialogue"
 
 [node name="Camera3D" parent="Viewpoints/Bathroom" index="0"]
 transform = Transform3D(0.861629, -4.77548e-16, -0.507538, 3.48787e-16, 1, -3.48787e-16, 0.507538, 1.23502e-16, 0.861629, 1.88134, 1.287, -2.85381)

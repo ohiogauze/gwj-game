@@ -1,0 +1,15 @@
+[remap]
+
+importer="dialogue_manager_compiler_11"
+type="Resource"
+uid="uid://kkmpth43stwd"
+path="res://.godot/imported/haunt_final.dialogue-f72e8ad74000663b02f46cac72638f8d.tres"
+
+[deps]
+
+source_file="res://dialogues/haunt_final.dialogue"
+dest_files=["res://.godot/imported/haunt_final.dialogue-f72e8ad74000663b02f46cac72638f8d.tres"]
+
+[params]
+
+defaults=true

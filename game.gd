@@ -7,7 +7,8 @@ extends Control
 @onready var fur: FUR = $MarginContainer/HBoxContainer/VBoxContainer/FUR
 @onready var house: House = $MarginContainer/HBoxContainer/SubViewportContainer/SubViewport/House
 
-var room_count := 0
+var max_rooms: int = 3
+var room_count: int = 0
 
 
 func _ready():
@@ -51,20 +52,32 @@ func _on_cat_collection_screen_closed() -> void:
 
 	if cat_count == 0:
 		room_count += 1
+
 		curtain.show()
 		var in_tween = create_tween()
 		in_tween.tween_property(curtain, "modulate:a", 1.0, 1.0)
 		in_tween.play()
-		conversation.play(house.viewpoint.haunt, true)
+
+		if room_count == max_rooms:
+			conversation.play("res://dialogues/haunt_final.dialogue", true)
+		else:
+			conversation.play(house.viewpoint.haunt, true)
 		await conversation.closed
-		var out_tween = create_tween()
-		out_tween.tween_property(curtain, "modulate:a", 0.0, 1.0)
-		out_tween.play()
-		out_tween.finished.connect(func ():
-			curtain.hide()
-		)
+
+		if room_count < max_rooms:
+			var out_tween = create_tween()
+			out_tween.tween_property(curtain, "modulate:a", 0.0, 1.0)
+			out_tween.play()
+			out_tween.finished.connect(func ():
+				curtain.hide()
+			)
+
 		conversation.play("res://dialogues/call_%s.dialogue" % room_count, false)
 		await conversation.closed
+
+		if room_count == max_rooms:
+			get_tree().change_scene_to_file("res://outro.tscn")
+			return
 
 	house.viewpoint.activate()
 
