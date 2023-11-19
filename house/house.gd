@@ -20,6 +20,7 @@ var clickable: Clickable
 
 
 func _ready():
+	$Ceiling.show()
 	viewpoint.activate()
 
 	for child in $Viewpoints.get_children():
@@ -31,7 +32,7 @@ func _ready():
 
 
 func _process(delta: float) -> void:
-	if Input.is_action_just_pressed("click") and clickable:
+	if Input.is_action_just_pressed("click") and clickable and clickable_label.text != "":
 		clickable.click()
 
 	var viewport := get_viewport()

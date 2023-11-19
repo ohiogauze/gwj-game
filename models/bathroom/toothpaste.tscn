@@ -1,0 +1,18 @@
+[gd_scene load_steps=4 format=3 uid="uid://cfnccqf4mvqro"]
+
+[ext_resource type="PackedScene" uid="uid://cj8ehnghj2c2t" path="res://models/bathroom/toothpaste.blend" id="1_fao04"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_eayit"]
+cull_mode = 1
+albedo_color = Color(0.772549, 0.309804, 1, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_yfgv1"]
+cull_mode = 1
+
+[node name="Toothpaste" instance=ExtResource("1_fao04")]
+
+[node name="tube" parent="." index="0"]
+surface_material_override/0 = SubResource("StandardMaterial3D_eayit")
+
+[node name="cap" parent="." index="1"]
+surface_material_override/0 = SubResource("StandardMaterial3D_yfgv1")

@@ -1,0 +1,35 @@
+[gd_scene load_steps=4 format=3 uid="uid://daw4hei1vxwdj"]
+
+[ext_resource type="PackedScene" uid="uid://d35r03k7jh88h" path="res://models/plumbing/bath_and_curtain.blend" id="1_ri4lx"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_rh268"]
+albedo_color = Color(0.462745, 0.462745, 0.462745, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_1c4up"]
+albedo_color = Color(0.690196, 1, 1, 1)
+
+[node name="bath_and_curtain" instance=ExtResource("1_ri4lx")]
+
+[node name="shower_pole" parent="." index="1"]
+surface_material_override/0 = SubResource("StandardMaterial3D_rh268")
+
+[node name="shower_curtain" parent="." index="2"]
+surface_material_override/0 = SubResource("StandardMaterial3D_1c4up")
+
+[node name="shower_head" parent="." index="3"]
+surface_material_override/0 = SubResource("StandardMaterial3D_rh268")
+
+[node name="bath_tap" parent="." index="4"]
+surface_material_override/0 = SubResource("StandardMaterial3D_rh268")
+
+[node name="bath_handle" parent="." index="5"]
+surface_material_override/0 = SubResource("StandardMaterial3D_rh268")
+
+[node name="bath_handel2" parent="." index="6"]
+surface_material_override/0 = SubResource("StandardMaterial3D_rh268")
+
+[node name="shower_handle" parent="." index="7"]
+surface_material_override/0 = SubResource("StandardMaterial3D_rh268")
+
+[node name="shower_handle_001" parent="." index="8"]
+surface_material_override/0 = SubResource("StandardMaterial3D_rh268")

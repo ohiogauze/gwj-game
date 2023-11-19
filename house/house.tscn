@@ -1,4 +1,4 @@
-[gd_scene load_steps=47 format=3 uid="uid://baryd3ae1wo6s"]
+[gd_scene load_steps=56 format=3 uid="uid://baryd3ae1wo6s"]
 
 [ext_resource type="PackedScene" uid="uid://beefg1sidd60x" path="res://house/rooms/bathroom.tscn" id="1_vbner"]
 [ext_resource type="Script" path="res://house/house.gd" id="1_wmed1"]
@@ -86,6 +86,23 @@ size = Vector3(2.70833, 0.08, 0.753853)
 [sub_resource type="BoxShape3D" id="BoxShape3D_x4syk"]
 size = Vector3(0.1, 2.008, 1.006)
 
+[sub_resource type="BoxShape3D" id="BoxShape3D_ln1g3"]
+size = Vector3(0.053, 0.685306, 0.575)
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_ne8r1"]
+height = 0.0459388
+radius = 0.0571325
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_ib1g7"]
+height = 0.692391
+radius = 0.220108
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_da2ql"]
+size = Vector3(0.154, 1.888, 0.922)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_60ram"]
+size = Vector3(0.0446073, 0.0366885, 0.0884187)
+
 [sub_resource type="Gradient" id="Gradient_huhy3"]
 colors = PackedColorArray(0.83496, 0.84, 0.7896, 1, 0.981667, 1, 0.89, 1)
 
@@ -101,6 +118,19 @@ noise = SubResource("FastNoiseLite_vkpya")
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_cu6s4"]
 albedo_texture = SubResource("NoiseTexture2D_bt5yg")
+
+[sub_resource type="Gradient" id="Gradient_se32m"]
+colors = PackedColorArray(0.762404, 0.762404, 0.762404, 1, 1, 1, 1, 1)
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_4k88f"]
+frequency = 0.5575
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_mm400"]
+color_ramp = SubResource("Gradient_se32m")
+noise = SubResource("FastNoiseLite_4k88f")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_r1ngb"]
+albedo_texture = SubResource("NoiseTexture2D_mm400")
 
 [sub_resource type="Gradient" id="Gradient_hdju5"]
 colors = PackedColorArray(0.72, 0.7116, 0.648, 1, 0.79, 0.77815, 0.711, 1)
@@ -217,8 +247,9 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.08331, 2.51865, -7.79534)
 light_color = Color(1, 0.976471, 0.956863, 1)
 
 [node name="Bathroom" type="OmniLight3D" parent="Lights"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.60946, 2.51865, -3.79434)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.60946, 2.08067, -3.79434)
 light_color = Color(1, 0.976471, 0.956863, 1)
+light_energy = 4.29
 
 [node name="Office" type="OmniLight3D" parent="Lights"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.60946, 2.51865, 1.39445)
@@ -450,7 +481,7 @@ shape = SubResource("BoxShape3D_oho2y")
 haunt = "res://dialogues/haunt_bathroom.dialogue"
 
 [node name="Camera3D" parent="Viewpoints/Bathroom" index="0"]
-transform = Transform3D(0.861629, -4.77548e-16, -0.507538, 3.48787e-16, 1, -3.48787e-16, 0.507538, 1.23502e-16, 0.861629, 1.88134, 1.287, -2.85381)
+transform = Transform3D(-0.743145, -0.277484, 0.608883, 3.17382e-16, 0.909961, 0.414693, -0.66913, 0.308177, -0.676233, 3.826, 1.817, -4.924)
 
 [node name="BathroomDoor" type="Area3D" parent="Viewpoints/Bathroom"]
 transform = Transform3D(1, -3.48787e-16, 0, 3.48787e-16, 1, -3.48787e-16, 0, 3.48787e-16, 0.999999, 1.54868, 1.03474, -5.11834)
@@ -461,6 +492,56 @@ title = "Hallway"
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Viewpoints/Bathroom/BathroomDoor"]
 transform = Transform3D(1, 2.64698e-22, 0, 0, 1, -2.00512e-26, 0, -2.687e-22, 1, 0, 0, 0.143786)
 shape = SubResource("BoxShape3D_x4syk")
+
+[node name="Towel" type="Area3D" parent="Viewpoints/Bathroom"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.5287, 0.456398, -4.1393)
+script = ExtResource("9_0b80s")
+cat_id = "towel_cat"
+title = "Towel"
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Viewpoints/Bathroom/Towel"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00133276, 0.0455915, 0.080092)
+shape = SubResource("BoxShape3D_ln1g3")
+
+[node name="Drain" type="Area3D" parent="Viewpoints/Bathroom"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.5287, 0.456398, -4.1393)
+script = ExtResource("9_0b80s")
+cat_id = "clog_cat"
+title = "Drain"
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Viewpoints/Bathroom/Drain"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.717443, -0.459906, 0.110244)
+shape = SubResource("CylinderShape3D_ne8r1")
+
+[node name="Toilet" type="Area3D" parent="Viewpoints/Bathroom"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.5287, 0.456398, -4.1393)
+script = ExtResource("9_0b80s")
+cat_id = "alcatraz_cat"
+title = "Toilet"
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Viewpoints/Bathroom/Toilet"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.26055, -0.0629039, 1.28845)
+shape = SubResource("CylinderShape3D_ib1g7")
+
+[node name="Curtain" type="Area3D" parent="Viewpoints/Bathroom"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.5287, 0.456398, -4.1393)
+script = ExtResource("9_0b80s")
+cat_id = "loofa_cat"
+title = "Shower"
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Viewpoints/Bathroom/Curtain"]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 1.14123, 0.554165, 0.687035)
+shape = SubResource("BoxShape3D_da2ql")
+
+[node name="Toothpaste" type="Area3D" parent="Viewpoints/Bathroom"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.5287, 0.456398, -4.1393)
+script = ExtResource("9_0b80s")
+cat_id = "sploot_cat"
+title = "Toothpaste"
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Viewpoints/Bathroom/Toothpaste"]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0.248799, 0.0983495, 0.760736)
+shape = SubResource("BoxShape3D_60ram")
 
 [node name="Office" parent="Viewpoints" instance=ExtResource("6_xcv2n")]
 
@@ -494,6 +575,7 @@ material = SubResource("StandardMaterial3D_cu6s4")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.5, 1, -4)
 operation = 2
 size = Vector3(4, 6, 3)
+material = SubResource("StandardMaterial3D_r1ngb")
 
 [node name="BathroomDoor" type="CSGBox3D" parent="Enclosure"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.471, 0.5, -5)
