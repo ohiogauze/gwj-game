@@ -259,6 +259,7 @@ transform = Transform3D(1, 2.64698e-22, 0, 0, 1, -2.00512e-26, 0, -2.687e-22, 1,
 shape = SubResource("BoxShape3D_oho2y")
 
 [node name="Kitchen" parent="Viewpoints" instance=ExtResource("6_xcv2n")]
+haunt = "res://dialogues/haunt_kitchen.dialogue"
 
 [node name="Camera3D" parent="Viewpoints/Kitchen" index="0"]
 transform = Transform3D(0.92521, -0.0982105, 0.366527, 3.36902e-16, 0.965926, 0.258819, -0.379456, -0.239462, 0.893684, -2.208, 1.922, 1.978)

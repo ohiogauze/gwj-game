@@ -6,6 +6,8 @@ extends Node
 signal activated
 signal cat_collected(cat_id: String)
 
+@export_file("*.dialogue") var haunt: String
+
 @onready var camera: Camera3D = $Camera3D
 
 var total_cats := 0

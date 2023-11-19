@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://dw0olb1a80i2s"]
+[gd_scene load_steps=10 format=3 uid="uid://dw0olb1a80i2s"]
 
 [ext_resource type="PackedScene" uid="uid://baryd3ae1wo6s" path="res://house/house.tscn" id="1_l31aa"]
 [ext_resource type="Script" path="res://game.gd" id="1_ptp86"]
@@ -7,6 +7,7 @@
 [ext_resource type="FontFile" uid="uid://bexq03pmtmlcr" path="res://fonts/pixel_arial_bold.TTF" id="3_uee2l"]
 [ext_resource type="PackedScene" uid="uid://v7dqxgwyx1kd" path="res://features/fur/fur.tscn" id="4_2vsee"]
 [ext_resource type="PackedScene" uid="uid://c8hp1xr2183is" path="res://features/cat_collection_screen/cat_collection_screen.tscn" id="6_d8ade"]
+[ext_resource type="PackedScene" uid="uid://c3pyp3j2d7wqj" path="res://features/conversation/conversation.tscn" id="8_2ciiy"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_tcxfg"]
 shader = ExtResource("2_8mvdw")
@@ -97,6 +98,20 @@ visible = false
 layout_mode = 1
 
 [node name="CatCollectionScreen" parent="." instance=ExtResource("6_d8ade")]
+visible = false
+layout_mode = 1
+
+[node name="Curtain" type="ColorRect" parent="."]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 1)
+
+[node name="Conversation" parent="." instance=ExtResource("8_2ciiy")]
 visible = false
 layout_mode = 1
 

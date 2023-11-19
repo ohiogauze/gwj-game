@@ -1,0 +1,15 @@
+[remap]
+
+importer="dialogue_manager_compiler_11"
+type="Resource"
+uid="uid://dqgotfu2s74su"
+path="res://.godot/imported/haunt_kitchen.dialogue-56af232dcae3d39305fa6feed58e248e.tres"
+
+[deps]
+
+source_file="res://dialogues/haunt_kitchen.dialogue"
+dest_files=["res://.godot/imported/haunt_kitchen.dialogue-56af232dcae3d39305fa6feed58e248e.tres"]
+
+[params]
+
+defaults=true

@@ -75,31 +75,16 @@ pivot_offset = Vector2(150, 150)
 size_flags_horizontal = 4
 size_flags_vertical = 4
 
-[node name="Close" type="Button" parent="MarginContainer/Control"]
-layout_mode = 1
-anchors_preset = 7
-anchor_left = 0.5
-anchor_top = 1.0
-anchor_right = 0.5
-anchor_bottom = 1.0
-offset_left = -54.0
-offset_top = -30.0
-offset_right = 54.0
-grow_horizontal = 2
-grow_vertical = 0
-theme_override_fonts/font = ExtResource("1_luosg")
-text = "Continue"
-
 [node name="SubViewportContainer" type="SubViewportContainer" parent="MarginContainer/Control"]
 material = SubResource("ShaderMaterial_cvsf2")
 layout_mode = 1
 anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
-offset_left = -125.0
+offset_left = -175.0
 offset_top = 20.0
-offset_right = 125.0
-offset_bottom = 250.0
+offset_right = 175.0
+offset_bottom = 270.0
 grow_horizontal = 2
 
 [node name="SubViewport" type="SubViewport" parent="MarginContainer/Control/SubViewportContainer"]
@@ -115,6 +100,21 @@ transform = Transform3D(0.707107, -0.353553, 0.612372, 0, 0.866025, 0.5, -0.7071
 
 [node name="SpotLight3D" type="SpotLight3D" parent="MarginContainer/Control/SubViewportContainer/SubViewport"]
 transform = Transform3D(0.827081, -0.285279, 0.484307, 3.00525e-16, 0.861629, 0.507538, -0.562083, -0.419775, 0.712637, 0.659658, 0.8349, 0.643836)
+
+[node name="Close" type="Button" parent="MarginContainer/Control"]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -54.0
+offset_top = -30.0
+offset_right = 54.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_fonts/font = ExtResource("1_luosg")
+text = "Continue"
 
 [node name="Name" type="ColorRect" parent="."]
 custom_minimum_size = Vector2(190, 145)
