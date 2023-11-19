@@ -6,6 +6,7 @@ extends Control
 signal closed
 
 var collected_cats: Array[String] = []
+var enable_all = false
 
 @onready var button: Button = $Container/HBoxContainer/Control/VBoxContainer/Button
 @onready var cat: Cat = $Container/HBoxContainer/Details/VBoxContainer/Control/SubViewportContainer/SubViewport/Cat
@@ -36,7 +37,7 @@ func setup():
 		if DataLibrary.cats.size() > index:
 			var data = DataLibrary.cats[index]
 
-			if collected_cats.has(data.id):
+			if collected_cats.has(data.id) or enable_all:
 				item.setup(data)
 			else:
 				item.setup(null)

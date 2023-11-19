@@ -1,6 +1,9 @@
-[gd_scene load_steps=2 format=3 uid="uid://db3wccep481xg"]
+[gd_scene load_steps=5 format=3 uid="uid://db3wccep481xg"]
 
+[ext_resource type="Script" path="res://outro.gd" id="1_1fn1n"]
 [ext_resource type="FontFile" uid="uid://bexq03pmtmlcr" path="res://fonts/pixel_arial_bold.TTF" id="1_142mc"]
+[ext_resource type="FontFile" uid="uid://bbu5jwdsqixea" path="res://fonts/pixel_arial.TTF" id="3_k1hnw"]
+[ext_resource type="PackedScene" uid="uid://j72804edpiwd" path="res://features/catalogue/catalogue.tscn" id="4_fpe4u"]
 
 [node name="Outro" type="Control"]
 layout_mode = 3
@@ -9,6 +12,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_1fn1n")
 
 [node name="ColorRect" type="ColorRect" parent="."]
 layout_mode = 1
@@ -64,3 +68,15 @@ text = "Thank you for playing!"
 horizontal_alignment = 1
 vertical_alignment = 1
 autowrap_mode = 2
+
+[node name="Button" type="Button" parent="TitleCard"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("3_k1hnw")
+text = "Show CATalogue"
+
+[node name="Catalogue" parent="." instance=ExtResource("4_fpe4u")]
+visible = false
+layout_mode = 1
+
+[connection signal="pressed" from="TitleCard/Button" to="." method="_on_button_pressed"]
+[connection signal="closed" from="Catalogue" to="." method="_on_catalogue_closed"]
