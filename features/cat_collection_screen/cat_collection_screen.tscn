@@ -105,13 +105,13 @@ grow_horizontal = 2
 [node name="SubViewport" type="SubViewport" parent="MarginContainer/Control/SubViewportContainer"]
 transparent_bg = true
 handle_input_locally = false
-size = Vector2i(250, 230)
+size = Vector2i(350, 250)
 render_target_update_mode = 4
 
 [node name="Cat" parent="MarginContainer/Control/SubViewportContainer/SubViewport" instance=ExtResource("4_40aep")]
 
 [node name="Camera3D" type="Camera3D" parent="MarginContainer/Control/SubViewportContainer/SubViewport"]
-transform = Transform3D(0.707107, -0.353553, 0.612372, 0, 0.866025, 0.5, -0.707107, -0.353553, 0.612372, 0.25, 0.415, 0.4)
+transform = Transform3D(0.707107, -0.353553, 0.612372, 0, 0.866025, 0.5, -0.707107, -0.353553, 0.612372, 0.325, 0.415, 0.325)
 
 [node name="SpotLight3D" type="SpotLight3D" parent="MarginContainer/Control/SubViewportContainer/SubViewport"]
 transform = Transform3D(0.827081, -0.285279, 0.484307, 3.00525e-16, 0.861629, 0.507538, -0.562083, -0.419775, 0.712637, 0.659658, 0.8349, 0.643836)
@@ -182,7 +182,7 @@ grow_horizontal = 2
 grow_vertical = 2
 theme_override_fonts/font = ExtResource("1_luosg")
 theme_override_font_sizes/font_size = 8
-text = "A riddle pruney from the water."
+text = "\"A riddle pruney from the water.\""
 horizontal_alignment = 1
 vertical_alignment = 1
 autowrap_mode = 2

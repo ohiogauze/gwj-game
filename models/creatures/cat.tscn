@@ -1,4 +1,4 @@
-[gd_scene load_steps=5 format=3 uid="uid://b46u2qswqgi0b"]
+[gd_scene load_steps=7 format=3 uid="uid://b46u2qswqgi0b"]
 
 [ext_resource type="PackedScene" uid="uid://cpwxxqx6lci6h" path="res://models/creatures/cat.blend" id="1_tvxir"]
 [ext_resource type="Script" path="res://models/creatures/cat.gd" id="2_bp3c7"]
@@ -9,8 +9,60 @@ albedo_texture = ExtResource("2_cvpft")
 uv1_scale = Vector3(2.185, 2.185, 2.185)
 uv1_triplanar = true
 
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_8qr2h"]
+albedo_color = Color(0, 0, 0, 1)
+metallic_specular = 0.6
+roughness = 0.0
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ubvsm"]
+albedo_color = Color(0, 0, 0, 1)
+
 [node name="Cat" instance=ExtResource("1_tvxir")]
 script = ExtResource("2_bp3c7")
 
 [node name="Cylinder" parent="." index="0"]
 surface_material_override/0 = SubResource("StandardMaterial3D_2rrs3")
+
+[node name="EyeLeft" type="CSGSphere3D" parent="." index="1"]
+transform = Transform3D(1, 0, 0, 0, 0.699825, 0.38573, 0, -0.714314, 0.377906, -0.02, 0.293, 0.28)
+radius = 0.01
+radial_segments = 6
+rings = 3
+material = SubResource("StandardMaterial3D_8qr2h")
+
+[node name="EyeRight" type="CSGSphere3D" parent="." index="2"]
+transform = Transform3D(1, 0, 0, 0, 0.699825, 0.38573, 0, -0.714314, 0.377906, 0.020312, 0.293344, 0.280071)
+radius = 0.01
+radial_segments = 6
+rings = 3
+material = SubResource("StandardMaterial3D_8qr2h")
+
+[node name="CSGBox3D" type="CSGBox3D" parent="." index="3"]
+transform = Transform3D(0.995606, 0, 0.0936392, 0, 1, 0, -0.0936392, 0, 0.995606, 0.0417842, 0.24953, 0.324297)
+size = Vector3(0.04, 0.002, 0.001)
+material = SubResource("StandardMaterial3D_ubvsm")
+
+[node name="CSGBox3D2" type="CSGBox3D" parent="." index="4"]
+transform = Transform3D(0.993137, -0.0694469, 0.0941083, 0.0697565, 0.997564, -3.48787e-16, -0.0938791, 0.00656466, 0.995562, 0.042, 0.254249, 0.324)
+size = Vector3(0.04, 0.002, 0.001)
+material = SubResource("StandardMaterial3D_ubvsm")
+
+[node name="CSGBox3D3" type="CSGBox3D" parent="." index="5"]
+transform = Transform3D(0.993137, 0.0694469, 0.0941083, -0.0697565, 0.997564, -3.48787e-16, -0.0938791, -0.00656466, 0.995562, 0.042, 0.244249, 0.324)
+size = Vector3(0.04, 0.002, 0.001)
+material = SubResource("StandardMaterial3D_ubvsm")
+
+[node name="CSGBox3D4" type="CSGBox3D" parent="." index="6"]
+transform = Transform3D(-0.995562, 0, 0.0941083, 0, 1, 0, -0.0941083, 0, -0.995562, -0.042, 0.24953, 0.323901)
+size = Vector3(0.04, 0.002, 0.001)
+material = SubResource("StandardMaterial3D_ubvsm")
+
+[node name="CSGBox3D5" type="CSGBox3D" parent="." index="7"]
+transform = Transform3D(-0.993137, 0.0694469, 0.0941083, 0.0697565, 0.997564, -5.38413e-10, -0.093879, 0.00656466, -0.995562, -0.042, 0.254249, 0.324198)
+size = Vector3(0.04, 0.002, 0.001)
+material = SubResource("StandardMaterial3D_ubvsm")
+
+[node name="CSGBox3D6" type="CSGBox3D" parent="." index="8"]
+transform = Transform3D(-0.993137, -0.0694469, 0.0941083, -0.0697565, 0.997564, -9.64097e-10, -0.093879, -0.00656466, -0.995562, -0.042, 0.244249, 0.324198)
+size = Vector3(0.04, 0.002, 0.001)
+material = SubResource("StandardMaterial3D_ubvsm")

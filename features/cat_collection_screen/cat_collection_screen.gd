@@ -31,7 +31,7 @@ func play(id: String) -> void:
 	cat.set_id(id)
 
 	cat_name.text = data.title
-	tagline.text = data.tagline
+	tagline.text = '"%s"' % data.tagline
 
 	var tween = get_tree().create_tween()
 	tween.tween_property(self, "modulate:a", 1.0, 1.0)
@@ -39,6 +39,10 @@ func play(id: String) -> void:
 
 	await tween.finished
 	close.show()
+
+
+func _process(delta: float) -> void:
+	cat.rotation.y += delta
 
 
 func _on_close_pressed() -> void:
