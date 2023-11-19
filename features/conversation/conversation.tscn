@@ -1,8 +1,9 @@
-[gd_scene load_steps=13 format=3 uid="uid://c3pyp3j2d7wqj"]
+[gd_scene load_steps=16 format=3 uid="uid://c3pyp3j2d7wqj"]
 
 [ext_resource type="Script" path="res://features/conversation/conversation.gd" id="1_rws1i"]
 [ext_resource type="Shader" path="res://shaders/4_bit_colour.gdshader" id="3_ff0ew"]
 [ext_resource type="FontFile" uid="uid://bexq03pmtmlcr" path="res://fonts/pixel_arial_bold.TTF" id="4_oqenx"]
+[ext_resource type="Texture2D" uid="uid://ctwe7vi86s2bt" path="res://textures/portraits/ghost.png" id="5_gm42t"]
 [ext_resource type="Texture2D" uid="uid://d2dplo6acuad6" path="res://textures/portraits/boss.png" id="6_d63uw"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_cvsf2"]
@@ -14,6 +15,12 @@ size = Vector3(0.05, 0.1, 0.01)
 [sub_resource type="FontVariation" id="FontVariation_yttja"]
 base_font = ExtResource("4_oqenx")
 spacing_glyph = 3
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_jgeh7"]
+shader = ExtResource("3_ff0ew")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_418sq"]
+shader = ExtResource("3_ff0ew")
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_y6ist"]
 
@@ -135,6 +142,7 @@ grow_horizontal = 0
 color = Color(0, 0, 0, 1)
 
 [node name="TextureRect" type="TextureRect" parent="BossBox"]
+material = SubResource("ShaderMaterial_jgeh7")
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -173,13 +181,14 @@ grow_horizontal = 0
 color = Color(0, 0, 0, 1)
 
 [node name="TextureRect" type="TextureRect" parent="GhostBox"]
+material = SubResource("ShaderMaterial_418sq")
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("6_d63uw")
+texture = ExtResource("5_gm42t")
 
 [node name="Label" type="Label" parent="GhostBox"]
 layout_mode = 1

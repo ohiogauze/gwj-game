@@ -10,7 +10,8 @@ config_version=5
 
 [application]
 
-config/name="GWJ Project"
+config/name="226 Lives (Demo)"
+run/main_scene="res://intro.tscn"
 config/features=PackedStringArray("4.1", "GL Compatibility")
 config/icon="res://icon.svg"
 

@@ -52,6 +52,7 @@ func _process(delta: float) -> void:
 	var collider := raycast.get_collider()
 
 	if collider == clickable:
+		clickable_label.text = clickable.title if clickable else ""
 		return
 
 	clickable_label.text = ""

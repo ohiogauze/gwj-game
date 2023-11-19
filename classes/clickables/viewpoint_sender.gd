@@ -9,5 +9,8 @@ extends Clickable
 
 
 func click():
+	if title.contains("INACCESSIBLE"):
+		return
+
 	get_parent().deactivate()
 	target.activate()
