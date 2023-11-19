@@ -86,7 +86,7 @@ noise = SubResource("FastNoiseLite_vkpya")
 albedo_texture = SubResource("NoiseTexture2D_bt5yg")
 
 [sub_resource type="Gradient" id="Gradient_hdju5"]
-colors = PackedColorArray(0.670588, 0.662745, 0.603922, 1, 0.66, 0.6501, 0.594, 1)
+colors = PackedColorArray(0.72, 0.7116, 0.648, 1, 0.79, 0.77815, 0.711, 1)
 
 [sub_resource type="FastNoiseLite" id="FastNoiseLite_x23pl"]
 frequency = 0.0375
@@ -121,6 +121,12 @@ ambient_light_energy = 0.1
 tonemap_mode = 3
 tonemap_exposure = 0.5
 ssao_enabled = true
+ssao_radius = 0.85
+ssao_intensity = 10.1
+ssao_power = 0.416088
+ssao_detail = 5.0
+ssao_horizon = 0.16
+ssao_sharpness = 1.0
 
 [node name="House" type="Node"]
 script = ExtResource("1_wmed1")
