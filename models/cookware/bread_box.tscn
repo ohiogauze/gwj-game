@@ -1,5 +1,25 @@
-[gd_scene load_steps=2 format=3 uid="uid://dd4ui2wyeafdg"]
+[gd_scene load_steps=6 format=3 uid="uid://dd4ui2wyeafdg"]
 
 [ext_resource type="PackedScene" uid="uid://b8txex0s5161x" path="res://models/cookware/bread_box.blend" id="1_dv8ig"]
 
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_pmla4"]
+albedo_color = Color(0.129412, 0.129412, 0.129412, 1)
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_ubsbc"]
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_5hgya"]
+noise = SubResource("FastNoiseLite_ubsbc")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_prpid"]
+albedo_color = Color(0.780392, 0.678431, 0.592157, 1)
+albedo_texture = SubResource("NoiseTexture2D_5hgya")
+uv1_triplanar = true
+uv1_world_triplanar = true
+
 [node name="BreadBox" instance=ExtResource("1_dv8ig")]
+
+[node name="Plane" parent="." index="0"]
+surface_material_override/0 = SubResource("StandardMaterial3D_pmla4")
+
+[node name="Plane_001" parent="." index="1"]
+surface_material_override/0 = SubResource("StandardMaterial3D_prpid")
