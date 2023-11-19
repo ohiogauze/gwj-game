@@ -1,14 +1,70 @@
-[gd_scene load_steps=3 format=3 uid="uid://jht3ds2x2fl5"]
+[gd_scene load_steps=16 format=3 uid="uid://jht3ds2x2fl5"]
+
+[ext_resource type="PackedScene" uid="uid://dg0sxbwuuu3p0" path="res://models/furniture/endtable.tscn" id="1_5tuiq"]
+[ext_resource type="PackedScene" uid="uid://cjbx3tahd12aw" path="res://models/furniture/couch.tscn" id="2_k0rdj"]
+[ext_resource type="PackedScene" uid="uid://b6iddb3fo4sad" path="res://models/furniture/tv_cabinet.tscn" id="3_dnn8e"]
+[ext_resource type="PackedScene" uid="uid://2qu0akxk6b8x" path="res://models/electronics/tv_computer.tscn" id="4_sc2uf"]
+[ext_resource type="PackedScene" uid="uid://1p2esn6qpfgx" path="res://models/electronics/vcr.tscn" id="5_ndteb"]
+
+[sub_resource type="Gradient" id="Gradient_yigxi"]
+colors = PackedColorArray(0.808998, 0.808998, 0.808998, 1, 1, 1, 1, 1)
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_ou5wo"]
+noise_type = 3
+frequency = 0.074
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_ogsd2"]
+width = 128
+height = 128
+color_ramp = SubResource("Gradient_yigxi")
+noise = SubResource("FastNoiseLite_ou5wo")
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_djsre"]
-albedo_color = Color(0.235294, 0.541176, 0.172549, 1)
+albedo_color = Color(0.823529, 0.560784, 0.341176, 1)
+albedo_texture = SubResource("NoiseTexture2D_ogsd2")
+uv1_triplanar = true
 
 [sub_resource type="BoxMesh" id="BoxMesh_no3yp"]
 material = SubResource("StandardMaterial3D_djsre")
 size = Vector3(4, 0.25, 5)
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_v7o75"]
+
+[sub_resource type="Gradient" id="Gradient_1ipxt"]
+colors = PackedColorArray(0.576471, 0, 1, 1, 0.113725, 1, 1, 1)
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_g05mp"]
+frequency = 0.145
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_48imf"]
+color_ramp = SubResource("Gradient_1ipxt")
+noise = SubResource("FastNoiseLite_g05mp")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_b01u4"]
+albedo_texture = SubResource("NoiseTexture2D_48imf")
 
 [node name="LoungeRoom" type="Node3D"]
 
 [node name="Floor" type="MeshInstance3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.08165e-12, -0.125, 2.08165e-12)
 mesh = SubResource("BoxMesh_no3yp")
+
+[node name="Endtable" parent="." instance=ExtResource("1_5tuiq")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.00358, 0, 1.96453)
+
+[node name="Couch" parent="." instance=ExtResource("2_k0rdj")]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -0.375216, 0, 0.13301)
+
+[node name="TVCabinet" parent="." instance=ExtResource("3_dnn8e")]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -0.569504, 0, 2.00838)
+
+[node name="tv_computer" parent="." instance=ExtResource("4_sc2uf")]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -0.464493, 0.499803, 2.0026)
+
+[node name="vcr" parent="." instance=ExtResource("5_ndteb")]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -0.567001, 0.291411, 1.69514)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.707107, 0, -0.707107, 0, 1, 0, 0.707107, 0, 0.707107, 0.104826, 0.0105939, 1.05769)
+mesh = SubResource("PlaneMesh_v7o75")
+surface_material_override/0 = SubResource("StandardMaterial3D_b01u4")

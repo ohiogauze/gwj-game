@@ -1,0 +1,11 @@
+[gd_scene load_steps=3 format=3 uid="uid://1p2esn6qpfgx"]
+
+[ext_resource type="PackedScene" uid="uid://ca6j3kwj6m60t" path="res://models/electronics/vcr.blend" id="1_5h6vk"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_hwey4"]
+albedo_color = Color(0.47451, 0.47451, 0.47451, 1)
+
+[node name="vcr" instance=ExtResource("1_5h6vk")]
+
+[node name="Plane" parent="." index="0"]
+surface_material_override/0 = SubResource("StandardMaterial3D_hwey4")

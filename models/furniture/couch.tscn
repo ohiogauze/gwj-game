@@ -1,0 +1,46 @@
+[gd_scene load_steps=8 format=3 uid="uid://cjbx3tahd12aw"]
+
+[ext_resource type="PackedScene" uid="uid://doou32a846eh0" path="res://models/furniture/couch.blend" id="1_bgqe4"]
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_p4sio"]
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_e063s"]
+width = 128
+height = 128
+noise = SubResource("FastNoiseLite_p4sio")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_nn8kt"]
+albedo_color = Color(0.360784, 0.309804, 0.270588, 1)
+albedo_texture = SubResource("NoiseTexture2D_e063s")
+uv1_triplanar = true
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_3h25r"]
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_hfhj8"]
+width = 128
+height = 128
+seamless = true
+noise = SubResource("FastNoiseLite_3h25r")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_pi6vy"]
+albedo_color = Color(0.521569, 0.290196, 0.235294, 1)
+albedo_texture = SubResource("NoiseTexture2D_hfhj8")
+uv1_triplanar = true
+uv1_world_triplanar = true
+
+[node name="Couch" instance=ExtResource("1_bgqe4")]
+
+[node name="couch_base" parent="." index="0"]
+surface_material_override/0 = SubResource("StandardMaterial3D_nn8kt")
+
+[node name="couch_bpillow2" parent="." index="1"]
+surface_material_override/0 = SubResource("StandardMaterial3D_pi6vy")
+
+[node name="couch_bpillow" parent="." index="2"]
+surface_material_override/0 = SubResource("StandardMaterial3D_pi6vy")
+
+[node name="couch_spillow2" parent="." index="3"]
+surface_material_override/0 = SubResource("StandardMaterial3D_pi6vy")
+
+[node name="couch_spillow" parent="." index="4"]
+surface_material_override/0 = SubResource("StandardMaterial3D_pi6vy")

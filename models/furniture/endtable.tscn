@@ -1,0 +1,38 @@
+[gd_scene load_steps=8 format=3 uid="uid://dg0sxbwuuu3p0"]
+
+[ext_resource type="PackedScene" uid="uid://bcj4b83u0dnr3" path="res://models/furniture/endtable.blend" id="1_sev84"]
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_768kf"]
+frequency = 0.1185
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_6k30f"]
+noise = SubResource("FastNoiseLite_768kf")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_tjori"]
+cull_mode = 2
+albedo_color = Color(0.901961, 0.811765, 0.745098, 1)
+albedo_texture = SubResource("NoiseTexture2D_6k30f")
+uv1_triplanar = true
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_tjqk4"]
+albedo_color = Color(0.658824, 0.541176, 0.403922, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_y5wmn"]
+albedo_color = Color(0.290196, 0.501961, 0.384314, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_oikjm"]
+albedo_color = Color(0.290196, 0.172549, 0.490196, 1)
+
+[node name="Endtable" instance=ExtResource("1_sev84")]
+
+[node name="endtable" parent="." index="0"]
+surface_material_override/0 = SubResource("StandardMaterial3D_tjori")
+
+[node name="pot" parent="." index="1"]
+surface_material_override/0 = SubResource("StandardMaterial3D_tjqk4")
+
+[node name="leaf" parent="." index="2"]
+surface_material_override/0 = SubResource("StandardMaterial3D_y5wmn")
+
+[node name="flowers" parent="." index="3"]
+surface_material_override/0 = SubResource("StandardMaterial3D_oikjm")
