@@ -16,7 +16,7 @@ func _ready():
 
 
 func play(id: String) -> void:
-	var data: CatData
+	var data
 
 	for model in DataLibrary.cats:
 		if id == model.id:

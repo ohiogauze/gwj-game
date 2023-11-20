@@ -5,7 +5,7 @@ extends Button
 @onready var label: Label = $CenterContainer/Label
 
 
-func setup(data: CatData) -> void:
+func setup(data) -> void:
 	if not data or not data.id:
 		label.text = "???"
 		disabled = true

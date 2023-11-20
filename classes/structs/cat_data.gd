@@ -1,6 +1,6 @@
 ## Data which defines a cat.
 class_name CatData
-extends Object
+extends Node
 
 
 ## Unique internal ID for the cat.
